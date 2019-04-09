@@ -6,7 +6,7 @@ include '../database/database.php';
  * Routing
  */
 
-define ('URL','http://localhost/Semaine-Intensive-H2T2');
+define ('URL','http://localhost:8888/public/');
 
  //Get q param
  $q = !empty($_GET['q']) ? $_GET['q'] : 'home';

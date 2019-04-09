@@ -1,0 +1,16 @@
+.dispResearch{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+
+.plantsText{
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 1% 1%;
+    width:30vw;
+    height:30vh;
+    background:#EFEFEF;
+    border-radius:5px;
+    box-shadow:#888888 2px 2px 9px;
+}
