@@ -9,14 +9,20 @@
 </head>
 <body>
     <header>
-        <form action="<?= URL ?>search" method="get">
+        <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
+        <p class="name_logo">The green thumb</p>
+
+        <form class="header_search" action="<?= URL ?>search" method="get">
             <label for="name">Name of your plant</label>
             <input type="text" name="name" id="name" autocomplete="off">
             <input type="submit" value="Search">
         </form>
-        <ul>
-            <li>
-                <a href="<?= URL ?>">Home</a>
-            </li>
-        </ul>
+
+        <div>
+            <a href="#" class="my_plants">My plants</a>
+            <a href="#" class="add_plant">Add plant</a>
+            <a href="#">
+                <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
+            </a>
+        </div>
     </header>
