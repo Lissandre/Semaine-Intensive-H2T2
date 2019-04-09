@@ -8,18 +8,21 @@ include '../config/database.php';
 
 define ('URL','http://localhost:8888/public/');
 
- //Get q param
- $q = !empty($_GET['q']) ? $_GET['q'] : 'home';
+//Get q param
+$q = !empty($_GET['q']) ? $_GET['q'] : 'home';
 
- //define controller
- $controller = '404';
+//define controller
+$controller = '404';
 
- if($q == 'home')
+if($q == 'home')
 {
     $controller = 'home';
-} else if ($q == 'about-us')
+}else if($q == 'plant')
 {
-    $controller = 'about';
+    header('Location: home');
+}else if (preg_match('/^plant\/[1-9][0-9]*$/', $q))
+{
+    $controller = 'plant';
 }
 
 /**
