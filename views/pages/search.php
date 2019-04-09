@@ -1,11 +1,6 @@
 <?php include '../views/partials/header.php' ?>
 
 <h1>Home</h1>
-<form action="#" method="get">
-    <label for="name">Name of your plant</label>
-    <input type="text" name="name" id="name" autocomplete="off">
-    <input type="submit" value="Search">
-</form>
 <div class="dispResearch">
 <?php if(!empty($plantsList)): ?>
     <?php foreach($plantsList as $key): ?>
