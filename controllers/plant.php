@@ -16,27 +16,26 @@ if(get_headers($url)[0]=='HTTP/1.1 200 OK')
     $result = file_get_contents($url);
     // Decode JSON
     $result = json_decode($result);
+    //Saving important informations in an array
     $result = [
-        'name' => $resultAPI->common_name,
-        'scientific_name' => $resultAPI->scientific_name,
-        'shape_and_orientation' => $resultAPI->main_species->specifications->shape_and_orientation,
-        'mature_height' => $resultAPI->main_species->specifications->mature_height->cm,
-        'lifespan' => $resultAPI->main_species->specifications->lifespan,
-        'growth_period' => $resultAPI->main_species->specifications->growth_period,
-        'growth_habit' => $resultAPI->main_species->specifications->growth_habit,
-        'images' => $resultAPI->images,
-        'temperature_minimum' => $resultAPI->main_species->growth->temperature_minimum->deg_c,
-        'precipitation_minimum' => $resultAPI->main_species->growth->precipitation_minimum->cm,
-        'precipitation_maximum' => $resultAPI->main_species->growth->precipitation_maximum->cm,
-        'flower_color' => $resultAPI->main_species->flower->color,
-        'duration' => $resultAPI->duration
+        'name' => $result->common_name,
+        'scientific_name' => $result->scientific_name,
+        'shape_and_orientation' => $result->main_species->specifications->shape_and_orientation,
+        'mature_height' => $result->main_species->specifications->mature_height->cm,
+        'lifespan' => $result->main_species->specifications->lifespan,
+        'growth_period' => $result->main_species->specifications->growth_period,
+        'growth_habit' => $result->main_species->specifications->growth_habit,
+        'images' => $result->images,
+        'temperature_minimum' => $result->main_species->growth->temperature_minimum->deg_c,
+        'precipitation_minimum' => $result->main_species->growth->precipitation_minimum->cm,
+        'precipitation_maximum' => $result->main_species->growth->precipitation_maximum->cm,
+        'flower_color' => $result->main_species->flower->color,
+        'duration' => $result->duration
     ];
 }else
 {
+    //If the plant is not found
     $result = 'NOT FOUND'; 
 }
-echo '<pre>';
-print_r($result);
-echo '</pre>';
 
 include '../views/pages/plant.php';
