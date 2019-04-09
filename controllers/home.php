@@ -1,14 +1,16 @@
-<?php
+<?php 
 require('../config/api_trefle.php');
 $title = 'home';
 
  /**
  * API trefle.io (to search a plant by it's name)
+ * >> REST API
  */
 
 /**
  * Get plants
  */
+
 if(!empty($_GET['name']))
 {
     $plant=$_GET['name'];
@@ -18,34 +20,11 @@ if(!empty($_GET['name']))
         'q' => $plant,
         'token' => TOKEN_TREFLE,
     ]);
-    // Cache info
-    $cacheKey = md5($url);
-    $cachePath = '../cache/'.$cacheKey;
-    $cacheUsed = false;
-    // Cache available
-    if(file_exists($cachePath) && time() - filemtime($cachePath) < 60)
-    {
-        $result = file_get_contents($cachePath);
-        $cacheUsed = true;
-    }
-    // Cache not available
-    else
-    {
-        // Make request to API
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        $result = curl_exec($curl);
-        curl_close($curl);
-        // Save API in cache
-        file_put_contents($cachePath, $result);
-    }
 
+    // Make request to API
+    $result = file_get_contents($url);
     // Decode JSON
     $result = json_decode($result);
-
     //Set an array to get all the returns plants
     $plantsList = [];
     //Scan the result to get the values needed from JSON object
@@ -59,23 +38,19 @@ if(!empty($_GET['name']))
      */
 
     $arrayImages = [];
-    //Create URL
+    
+    //Create URL for every plants to get their images
     foreach ($plantsList as $key) {
         $url = $key[2].'?token='.TOKEN_TREFLE;
 
         //Request to API
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        $images = curl_exec($curl);
-        curl_close($curl);
-        
+        $images = file_get_contents($url);
         $images = json_decode($images);
+        
+        //Save images in array
         array_push($arrayImages, $images->images);
     }
-
+    //Merging plants and images arrays
     for ($i=0; $i < sizeof($plantsList); $i++) { 
         array_push($plantsList[$i], $arrayImages[$i]);
     }
