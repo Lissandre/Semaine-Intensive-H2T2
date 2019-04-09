@@ -29,8 +29,10 @@ if(!empty($_GET['name']))
     $plantsList = [];
     //Scan the result to get the values needed from JSON object
     foreach ($result as $key) {
-        //Push these values to the array
-        array_push($plantsList, [$key->common_name, $key->scientific_name, $key->link, $key ->id]);
+        //Push these values to the array if there is a common name
+        if($key->common_name){
+            array_push($plantsList, [$key->common_name, $key->link, $key ->id]);
+        } 
     }
 
     /**
@@ -41,7 +43,7 @@ if(!empty($_GET['name']))
     
     //Create URL for every plants to get their images
     foreach ($plantsList as $key) {
-        $url = $key[2].'?token='.TOKEN_TREFLE;
+        $url = $key[1].'?token='.TOKEN_TREFLE;
 
         //Request to API
         $images = file_get_contents($url);

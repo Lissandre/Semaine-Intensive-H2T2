@@ -9,11 +9,11 @@
 <div class="dispResearch">
 <?php if(!empty($plantsList)): ?>
     <?php foreach($plantsList as $key): ?>
-        <a href="<?= URL.'plant/'.$key[3] ?>" class="plantsText">
-                <img src="<?= $key[4][0] ? $key[4][0]->url : "placeholer" ?>" alt="">
-            <p>Common name : <?= $key[0] ?></p>
-            <p>Scientific name : <?= $key[1] ?></p>
-        </a>
+        <div class="plantsText">
+            <img src="<?= !empty($key[3][0]) ? $key[3][0]->url : "placeholer" ?>" alt="">
+            <p>Name : <?= $key[0] ?></p>
+            <a href="<?= 'plant/'.$key[2] ?>">Add</a>
+        </div>
     <?php endforeach; ?>
 <?php elseif(empty($plantsList) && !empty($_GET['name'])): ?>
     <h2><?= ucfirst(strtolower($plant)) ?> not found</h2>
