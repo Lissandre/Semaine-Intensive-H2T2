@@ -30,7 +30,7 @@ if(!empty($_GET['name']))
     //Scan the result to get the values needed from JSON object
     foreach ($result as $key) {
         //Push these values to the array
-        array_push($plantsList, [$key->common_name, $key->scientific_name, $key->link]);
+        array_push($plantsList, [$key->common_name, $key->scientific_name, $key->link, $key ->id]);
     }
 
     /**
