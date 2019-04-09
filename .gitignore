@@ -55,4 +55,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Cache
+cache/*
+!cache/.gitkeep
+
 # End of https://www.gitignore.io/api/macos,windows
