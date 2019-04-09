@@ -29,7 +29,7 @@ if(!empty($_GET['name']))
     $plantsList = [];
     //Scan the result to get the values needed from JSON object
     foreach ($result as $key) {
-        //Push these values to the array if there is a common name
+        //Push these values to the array if there is a common name (so the plant can be known from more than just a biologist)
         if($key->common_name){
             array_push($plantsList, 
             [
