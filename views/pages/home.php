@@ -10,10 +10,13 @@
 <?php if(!empty($plantsList)): ?>
     <?php foreach($plantsList as $key): ?>
         <div data-url="<?= $key[2] ?>" class="plantsText">
+                <img src="<?= $key[3][0] ? $key[3][0]->url : "placeholer" ?>" alt="">
             <p>Common name : <?= $key[0] ?></p>
             <p>Scientific name : <?= $key[1] ?></p>
         </div>
     <?php endforeach; ?>
+<?php else: ?>
+    <h2><?= ucfirst(strtolower($plant)) ?> not found</h2>
 <?php endif ?>
 </div>
 
