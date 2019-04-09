@@ -10,7 +10,7 @@
 <?php if(!empty($plantsList)): ?>
     <?php foreach($plantsList as $key): ?>
         <div class="plantsText">
-            <img src="<?= !empty($key[3][0]) ? $key[3][0]->url : "placeholer" ?>" alt="">
+            <img src="<?= !empty($key[3][0]) ? $key[3][0]->url : "placeholer" ?>" alt="plant picture" class="plant_image_home">
             <p>Name : <?= $key[0] ?></p>
             <a href="<?= 'plant/'.$key[2] ?>">Add</a>
         </div>
