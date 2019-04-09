@@ -1,3 +1,8 @@
+*
+{
+    background-color: #fafafa;
+}
+
 /** 
 Home 
 **/ 
@@ -11,17 +16,34 @@ Home
 
 .plantsText
 {
-    box-sizing: border-box;
-    margin: 0px 40;
-    padding: 1% 1%;
+    margin: 0px 20px;
     width: 200px ;
-    height: 200px;
-    background:#EFEFEF;
-    border-radius:5px;
-    box-shadow:#888888 2px 2px 9px;
+    height: 370px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.plant_name
+{
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .plant_image_home
 {
+    width: 200px;
+    height: 200px;
+}
 
+.plant_link
+{
+    color: #30BE76;
+    border : 2px solid #30BE76;
+    border-radius: 4px;
+}
+
+.add_plant
+{
+    margin : 5px 8px 7px 30px;
 }
