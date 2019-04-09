@@ -31,7 +31,12 @@ if(!empty($_GET['name']))
     foreach ($result as $key) {
         //Push these values to the array if there is a common name
         if($key->common_name){
-            array_push($plantsList, [$key->common_name, $key->link, $key ->id]);
+            array_push($plantsList, 
+            [
+            'name' => $key->common_name,
+            'link' => $key->link,
+            'id' => $key->id
+            ]);
         } 
     }
 
@@ -43,7 +48,7 @@ if(!empty($_GET['name']))
     
     //Create URL for every plants to get their images
     foreach ($plantsList as $key) {
-        $url = $key[1].'?token='.TOKEN_TREFLE;
+        $url = $key['link'].'?token='.TOKEN_TREFLE;
 
         //Request to API
         $images = file_get_contents($url);
@@ -54,7 +59,7 @@ if(!empty($_GET['name']))
     }
     //Merging plants and images arrays
     for ($i=0; $i < sizeof($plantsList); $i++) { 
-        array_push($plantsList[$i], $arrayImages[$i]);
+        $plantsList[$i]['images'] = $arrayImages[$i];
     }
 };
 
