@@ -9,12 +9,14 @@
 </head>
 <body>
     <header>
+        <form action="<?= URL ?>search" method="get">
+            <label for="name">Name of your plant</label>
+            <input type="text" name="name" id="name" autocomplete="off">
+            <input type="submit" value="Search">
+        </form>
         <ul>
             <li>
                 <a href="<?= URL ?>">Home</a>
-            </li>
-            <li>
-                <a href="<?= URL ?>about-us">About</a>
             </li>
         </ul>
     </header>

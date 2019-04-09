@@ -15,7 +15,7 @@ if(get_headers($url)[0]=='HTTP/1.1 200 OK')
 {
     $result = file_get_contents($url);
     // Decode JSON
-    $result = json_decode($result);
+    // $result = json_decode($result);
 }else
 {
     $result = 'NOT FOUND'; 
