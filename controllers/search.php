@@ -25,8 +25,8 @@ if(!empty($_GET['name']))
     // Cache info
     $cacheKey = md5($url);
     $cachePath = '../cache/'.$cacheKey;
-    //If Request has been done before
-    if(file_exists($cachePath) && time() - filemtime($cachePath) < 36000)
+    //If Request has been done before and younger than a week
+    if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
     {
         $plantsList = file_get_contents($cachePath);
         $plantsList = json_decode($plantsList, true);
