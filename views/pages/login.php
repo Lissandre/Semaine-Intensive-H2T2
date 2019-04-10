@@ -1,31 +1,35 @@
 <?php include '../views/partials/header.php' ?>
 
-<div class="login-background"></div>
-<div class="login-container">
-    <div class="login-logo">
+<div class="login_background"></div>
+<div class="login_container">
+    <div class="login_logo">
         <img src="<?= URL ?>assets/images/logo.svg">
-        <p class="login-logo-text">The Green Thumb</p>
+        <p class="login_logo_text">The Green Thumb</p>
     </div>
-    <div class="login-space">
+    <div class="login_space">
         <h1>Welcome back !</h1>
-        <p class="login-subtext">Please login to continue</p>
+        <p class="login_subtext">Please login to continue</p>
         <form action="#" method="post">
             <div class="field">
-                <label for="login">E-mail address</label>
+                <label for="login">Email address</label>
                 <br>
-                <input type="text" name="login" id="login">
+                <input type="text" name="login" id="login" placeholder="plant@green.com">
             </div>
 
             <div class="field">
                 <label for="password">Password</label>
                 <br>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" placeholder="••••••••••••••">
             </div>
 
             <div class="field">
-                <input type="submit" value="Login">
+                <input class="submit_button" type="submit" value="Login">
             </div>
         </form>
+        <div class="new">
+            <p class="login_subtext">New to The Green Thumb ?</p>
+            <a href="#">Create account here</a>
+        </div>
     </div>
 </div>
 

@@ -2,7 +2,7 @@
 Login
 **/
 
-.login-background
+.login_background
 {
     position: absolute;
     width: 1024px;
@@ -14,13 +14,16 @@ Login
     opacity: 0.45;
 }
 
-.login-container
+.login_container
 {
     position: relative;
     width: 910px;
     height: 570px;
     left: 265px;
     top: 227px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     background: #FAFAFA;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
@@ -29,34 +32,75 @@ Login
     font-weight: 500;
 }
 
-.login-container .login-logo img
+.login_container .login_logo img
 {
     height: 233px;
     width: 233px;
-    margin-top: 122px;
-    margin-left: 96px;
+    /*margin-left: 96px;*/
 }
 
-.login-container .login-logo-text
+.login_container .login_logo_text
 {
-    /*margin-top: -40px;*/
-    margin-left: 106px;
-    margin-bottom: 215px;
+    margin-top: -28px;
+    margin-left: 10px;
+    /*margin-left: 106px;*/
 }
 
-.login-container .login-space
+.login_container .login_space
 {
     /*margin-top: 84px;*/
-    margin-left: 470px;
+    /*margin-left: 141px;*/
+
 }
 
-.login-container .login-space h1
+.login_container .login_space h1
 {
     font-size: 24px;
     font-weight: 500;
 }
 
-.login-container .login-space .login-subtext
+.login_container .login_space .login_subtext
 {
     font-size: 13px;
+    color: #A8A8A8;
+    font-weight: normal;
+    margin-top: -6px;
+}
+
+.login_container .login_space form .field label
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 38px;
+}
+
+.login_container .login_space form .field .submit_button
+{
+    height: 50px;
+    width: 300px;
+    background: #30BE76;
+    box-shadow: 0px 6px 20px rgba(51, 125, 59, 0.25);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 58px;
+    cursor: pointer;
+}
+
+.login_container .login_space .new
+{
+    text-align: center;
+}
+
+.login_container .login_space .new .login_subtext
+{
+    padding-top: 25px;
+}
+
+.login_container .login_space .new a
+{
+    color: #30BE76;
+    font-size: 13px;
+    text-decoration: none;
 }
