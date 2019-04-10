@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
 </head>
 <body>
+    <?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>
     <header>
         <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
         <p class="name_logo">The Green Thumb</p>
@@ -32,5 +33,5 @@
             <a href="#">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
-
     </header>
+    <?php endif; ?>
