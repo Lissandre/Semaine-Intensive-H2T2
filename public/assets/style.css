@@ -5,6 +5,21 @@ body
     margin: 0;
     padding: 0;
 }
+
+.button{
+    cursor: pointer;
+    border: 2px solid #30BE76;
+    border-radius: 8px;
+    background-color: #30BE76;
+    width: 197px;
+    height: 50px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+}
 /** 
 Header 
 **/ 
@@ -32,6 +47,47 @@ header {
     font-size: 14px;
     line-height: normal;
     color: #000000;
+}
+
+
+
+.my_plants
+{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.second_button
+{
+    cursor: pointer;
+    border: 2px solid #30BE76;
+    border-radius: 8px;
+    width: 197px;
+    height: 50px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+}
+
+.add_plant
+{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    text-align: center;
+    color: #30BE76;
+    text-decoration: none;
 }
 
 

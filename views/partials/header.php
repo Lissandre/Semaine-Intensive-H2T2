@@ -10,19 +10,25 @@
 <body>
     <header>
         <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
-        <p class="name_logo">The green thumb</p>
+        <p class="name_logo">The Green Thumb</p>
 
         <form class="header_search" action="<?= URL ?>search" method="get">
-            <label for="name">Name of your plant</label>
-            <input type="text" name="name" id="name" autocomplete="off">
-            <input type="submit" value="Search">
+            <label for="name">
+                <img src="<?= URL ?>assets/images/search.svg" alt="ptitloup">
+            </label>
+            <input type="text" name="name" id="name" autocomplete="off" value="Search">
         </form>
 
-        <div>
-            <a href="/myplants" class="my_plants">My plants</a>
-            <a href="//addplant" class="add_plant">Add plant</a>
+            <div class=" button first_button">
+                <a href="/myplants" class="my_plants">My plants</a>
+            </div>
+
+            <div class=" second_button">
+                <a href="//addplant" class="add_plant">Add plant</a>
+            </div>
+            
             <a href="#">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
-        </div>
+
     </header>
