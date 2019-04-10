@@ -1,6 +1,6 @@
 <?php include '../views/partials/header.php' ?>
 
-<div class="content_home">
+<div class="content-home">
     <div class="container">
         <div class="background_main">
         <h1>
