@@ -29,7 +29,7 @@
                 <a href="<?= URL ?>addplant" class="add_plant">Add plant</a>
             </div>
             
-            <a href="#">
+            <a href="<?= URL ?>logout">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
 

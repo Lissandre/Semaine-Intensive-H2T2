@@ -1,5 +1,17 @@
 <?php include '../views/partials/header.php' ?>
 
+<?php foreach ($messages['error'] as $message): ?>
+    <div class="message error">
+        <?= $message; ?>
+    </div>
+<?php endforeach; ?>
+
+<?php foreach ($messages['success'] as $message): ?>
+    <div class="message success">
+        <?= $message; ?>
+    </div>
+<?php endforeach; ?>
+
 <div class="login_background"></div>
 <div class="login_container">
     <div class="login_logo">
@@ -13,13 +25,13 @@
             <div class="field">
                 <label for="login">Email address</label>
                 <br>
-                <input type="text" name="login" id="login" placeholder="plant@green.com">
+                <input type="text" name="login" id="login" value="<?= !empty($_POST['login']) ? $_POST['login'] : '' ?>" placeholder="plant@green.com">
             </div>
 
             <div class="field">
                 <label for="password">Password</label>
                 <br>
-                <input type="password" name="password" id="password" placeholder="••••••••••••••">
+                <input type="password" name="password" id="password" value="<?= !empty($_POST['password']) ? $_POST['password'] : '' ?>" placeholder="••••••••••••••">
             </div>
 
             <div class="field">
@@ -28,7 +40,7 @@
         </form>
         <div class="new">
             <p class="login_subtext">New to The Green Thumb ?</p>
-            <a href="#">Create account here</a>
+            <a href="<?= URL ?>signup">Create account here</a>
         </div>
     </div>
 </div>
