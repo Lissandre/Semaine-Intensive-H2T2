@@ -12,26 +12,31 @@
 <body>
     <?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>
     <header>
-        <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
-        <p class="name_logo">The Green Thumb</p>
+        <div class="log_and_name">
+            <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
+            <p class="name_logo">The Green Thumb</p>
+        </div>
+        
 
         <form class="header_search" action="<?= URL ?>search" method="get">
             <label for="name">
                 <img src="<?= URL ?>assets/images/search.svg" alt="ptitloup">
             </label>
-            <input type="text" name="name" id="name" autocomplete="off" value="Search">
+            <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search" >
         </form>
 
-            <div class=" button first_button">
-                <a href="<?= URL ?>myplants" class="my_plants">My plants</a>
-            </div>
+        <div class="buttons_icons">
+            <p class="button">
+                <a class="my_plant" href="<?= URL ?>myPlant">My Plant</a>
+            </p>
 
-            <div class=" second_button">
-                <a href="<?= URL ?>addplant" class="add_plant">Add plant</a>
-            </div>
+            <p class="button">
+                <a class="add_plant" href="<?= URL ?>search">Add Plant</a>
+            </p>
             
-            <a href="#">
+            <a class="button" href="<?= URL ?>home">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
+        </div>
     </header>
     <?php endif; ?>
