@@ -9,7 +9,7 @@
         <div class="photos">
             <?php if($result['images']): ?>
                 <?php foreach ($result['images'] as $key): ?>
-                    <img src="<?= $key->url ?>" alt="Plant image">
+                    <img src="<?= $key['url'] ?>" alt="Plant image">
                 <?php endforeach; ?>
             <?php else: ?>
                 <img src="placeholder" alt="Photo not found">

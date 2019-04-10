@@ -41,12 +41,14 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
             'flower_color' => $result->main_species->flower->color,
             'duration' => $result->duration
         ];
-        $searchSave = json_encode($result);
-        file_put_contents($cachePath, $searchSave);
+        $result = json_encode($result);
+        file_put_contents($cachePath, $result);
+        $result = json_decode($result,true);
     }else
     {
         //If the plant is not found
         $result = 'NOT FOUND'; 
     }
 }
+
 include '../views/pages/plant.php';
