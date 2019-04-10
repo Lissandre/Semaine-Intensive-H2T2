@@ -1,31 +1,40 @@
-*
-{
-    background-color: #fafafa;
-}
 
+body
+{
+    background-color: #FAFAFA;
+    margin: 0;
+    padding: 0;
+}
 /** 
 Header 
 **/ 
 
-header
-{
-    background-image: url('<?= URL ?>images/header.svg');
+header {
     width: 100vw;
     height: 106px;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    font-family: 'Rubik', sans-serif;
-    font-size: 14px;
-    text-decoration: none;
+    box-shadow: 0px 6px 10px #efefef;
+    background-color: white;
 }
 
 .logo_img
 {
     width: 50px;
     height: 50px;
-    padding-left: 10%;
-    
 }
+
+.name_logo
+{
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    color: #000000;
+}
+
+
 
 /** 
 Search
@@ -37,6 +46,7 @@ Search
     padding-left: 140px;
     display:flex;
     flex-wrap: wrap;
+    background-color: #fafafa;
 }
 
 .plantsText

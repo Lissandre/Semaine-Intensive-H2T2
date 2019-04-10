@@ -19,8 +19,8 @@
         </form>
 
         <div>
-            <a href="#" class="my_plants">My plants</a>
-            <a href="#" class="add_plant">Add plant</a>
+            <a href="/myplants" class="my_plants">My plants</a>
+            <a href="//addplant" class="add_plant">Add plant</a>
             <a href="#">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
