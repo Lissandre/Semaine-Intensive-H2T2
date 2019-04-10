@@ -1,25 +1,20 @@
-html {
-    font-family: 'Rubik',
-        sans-serif;
-}
-
-body {
+.content_home {
     background-image: url("../assets/images/plantbg.png");
     background-color: #FAFAFA;
     background-repeat: no-repeat;
 }
 
-.container {
+.content-home .container {
     margin: 0px 10%;
 }
 
-h1 {
+.content-home h1 {
     font-weight: 500;
     font-size: 72px;
     padding-top: 10%;
 }
 
-p.desc_main {
+.content-home p.desc_main {
     width: 686px;
     height: 124px;
     font-family: Rubik;
@@ -28,7 +23,7 @@ p.desc_main {
     line-height: 29px;
 }
 
-p.title {
+.content-home p.title {
     font-weight: 500;
     font-size: 18px;
     width: 680px;
@@ -38,7 +33,7 @@ p.title {
     margin: auto;
 }
 
-p.desc {
+.content-home p.desc {
     width: 686px;
     height: 124px;
     font-family: Rubik;
@@ -50,7 +45,7 @@ p.desc {
     margin: auto;
 }
 
-.button {
+.content-home .button {
     cursor: pointer;
     border: 2px solid #30BE76;
     border-radius: 8px;
@@ -65,6 +60,6 @@ p.desc {
     box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
 }
 
-.m-30 {
+.content-home .m-30 {
     margin-top: 30%;
 }
