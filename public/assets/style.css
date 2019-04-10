@@ -1,4 +1,3 @@
-
 body
 {
     background-color: #FAFAFA;
@@ -6,20 +5,7 @@ body
     padding: 0;
 }
 
-.button{
-    cursor: pointer;
-    border: 2px solid #30BE76;
-    border-radius: 8px;
-    background-color: #30BE76;
-    width: 197px;
-    height: 50px;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
-}
+
 /** 
 Header 
 **/ 
@@ -33,6 +19,14 @@ header {
     background-color: white;
 }
 
+.log_and_name
+{
+    margin: 0 auto;
+    margin-top: 23px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .logo_img
 {
     width: 50px;
@@ -43,53 +37,88 @@ header {
 {
     font-family: Rubik;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
     line-height: normal;
     color: #000000;
+    margin-top: 21px;
 }
 
-
-
-.my_plants
+.header_search
 {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: normal;
-    text-align: center;
-    text-decoration: none;
-    color: white;
+    margin: 0 auto;
+    margin-top: 31px;
 }
 
-.second_button
+.search_bar_header
+{
+    border: none;
+    border-bottom : 1px solid #A8A8A8;
+}
+
+.buttons_icons
+{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+<<<<<<< HEAD
+}
+
+.button
+{
+    margin: 28px 10px;
+}
+=======
+}
+
+.button
+{
+    margin: 28px 10px;
+}
+
+
+>>>>>>> 5e9451a61d86dbdcb49fbcf748c51aa954a8226d
+
+p.button .my_plant
 {
     cursor: pointer;
     border: 2px solid #30BE76;
     border-radius: 8px;
-    width: 197px;
+    background-color: #30BE76;
+    width: 160px;
     height: 50px;
     font-weight: 500;
     color: white;
     text-align: center;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
     display: table-cell;
     vertical-align: middle;
-    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
-}
-
-.add_plant
-{
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: normal;
-    text-align: center;
-    color: #30BE76;
     text-decoration: none;
+    font-family: Rubik;
 }
 
+p.button .add_plant
+{
+    cursor: pointer;
+    border: 2px solid #30BE76;
+    border-radius: 8px;
+    width: 160px;
+    height: 50px;
+    font-weight: 500;
+    color: #30BE76;
+    text-align: center;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: Rubik;
+}
+
+
+.log_out_img
+{
+    margin: auto;   
+}
 
 
 /** 
@@ -102,7 +131,6 @@ Search
     padding-left: 140px;
     display:flex;
     flex-wrap: wrap;
-    background-color: #fafafa;
 }
 
 .plantsText
@@ -117,7 +145,7 @@ Search
 {
     margin-top: 20px;
     margin-bottom: 35px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 16px;
     text-transform: capitalize;
 }
@@ -137,12 +165,116 @@ Search
     text-decoration: none;
 }
 
-.plant_link img
-{
-    
-}
-
 .add_plant
 {
     margin : 5px 8px 7px 30px;
+}
+
+/**
+Login
+**/
+.login_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login_page input{
+    width: 250px;
+    height: 20px;
+    border: 0px;
+    border-bottom: 1px solid #A8A8A8;
+    background: #FAFAFA;
+    outline: none;
+}
+
+.login_bg
+{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('images/nature.png');
+    background-size: cover;
+    opacity: 0.45;
+    z-index: -1;
+}
+
+.login_container
+{
+    width: 910px;
+    height: 570px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #FAFAFA;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.login_container .login_logo img
+{
+    height: 233px;
+    width: 233px;
+}
+
+.login_container .login_logo_text
+{
+    margin-top: -28px;
+
+}
+
+.login_container .login_space h1
+{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.login_container .login_space .login_subtext
+{
+    font-size: 13px;
+    color: #A8A8A8;
+    font-weight: normal;
+    margin-top: -6px;
+}
+
+.login_container .login_space form .field label
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 38px;
+}
+
+.login_container .login_space form .field .submit_button
+{
+    height: 50px;
+    width: 300px;
+    background: #30BE76;
+    box-shadow: 0px 6px 20px rgba(51, 125, 59, 0.25);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 58px;
+    cursor: pointer;
+}
+
+.login_container .login_space .new
+{
+    text-align: center;
+}
+
+.login_container .login_space .new .login_subtext
+{
+    padding-top: 25px;
+}
+
+.login_container .login_space .new a
+{
+    color: #30BE76;
+    font-size: 13px;
+    text-decoration: none;
 }

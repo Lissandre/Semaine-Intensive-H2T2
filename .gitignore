@@ -58,5 +58,6 @@ $RECYCLE.BIN/
 #Cache
 cache/*
 !cache/.gitkeep
+index.php
 
 # End of https://www.gitignore.io/api/macos,windows
