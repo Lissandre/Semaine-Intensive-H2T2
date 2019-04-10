@@ -1,4 +1,3 @@
-
 body
 {
     background-color: #FAFAFA;
@@ -6,20 +5,7 @@ body
     padding: 0;
 }
 
-.button{
-    cursor: pointer;
-    border: 2px solid #30BE76;
-    border-radius: 8px;
-    background-color: #30BE76;
-    width: 197px;
-    height: 50px;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
-}
+
 /** 
 Header 
 **/ 
@@ -33,6 +19,14 @@ header {
     background-color: white;
 }
 
+.log_and_name
+{
+    margin: 0 auto;
+    margin-top: 23px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .logo_img
 {
     width: 50px;
@@ -43,53 +37,79 @@ header {
 {
     font-family: Rubik;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
     line-height: normal;
     color: #000000;
+    margin-top: 21px;
 }
 
-
-
-.my_plants
+.header_search
 {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: normal;
-    text-align: center;
-    text-decoration: none;
-    color: white;
+    margin: 0 auto;
+    margin-top: 31px;
 }
 
-.second_button
+.search_bar_header
+{
+    border: none;
+    border-bottom : 1px solid #A8A8A8;
+}
+
+.buttons_icons
+{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button
+{
+    margin: 28px 10px;
+}
+
+
+
+p.button .my_plant
 {
     cursor: pointer;
     border: 2px solid #30BE76;
     border-radius: 8px;
-    width: 197px;
+    background-color: #30BE76;
+    width: 160px;
     height: 50px;
     font-weight: 500;
     color: white;
     text-align: center;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
     display: table-cell;
     vertical-align: middle;
-    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
-}
-
-.add_plant
-{
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: normal;
-    text-align: center;
-    color: #30BE76;
     text-decoration: none;
+    font-family: Rubik;
 }
 
+p.button .add_plant
+{
+    cursor: pointer;
+    border: 2px solid #30BE76;
+    border-radius: 8px;
+    width: 160px;
+    height: 50px;
+    font-weight: 500;
+    color: #30BE76;
+    text-align: center;
+    box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: Rubik;
+}
+
+
+.log_out_img
+{
+    margin: auto;   
+}
 
 
 /** 
@@ -102,7 +122,6 @@ Search
     padding-left: 140px;
     display:flex;
     flex-wrap: wrap;
-    background-color: #fafafa;
 }
 
 .plantsText
@@ -117,7 +136,7 @@ Search
 {
     margin-top: 20px;
     margin-bottom: 35px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 16px;
     text-transform: capitalize;
 }
