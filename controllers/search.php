@@ -19,48 +19,67 @@ if(!empty($_GET['name']))
     $url .= '?'.http_build_query([
         'q' => $plant,
         'token' => TOKEN_TREFLE,
+        'pagesize' => 15
     ]);
 
-    // Make request to API
-    $result = file_get_contents($url);
-    // Decode JSON
-    $result = json_decode($result);
-    //Set an array to get all the returns plants
-    $plantsList = [];
-    //Scan the result to get the values needed from JSON object
-    foreach ($result as $key) {
-        //Push these values to the array if there is a common name (so the plant can be known from more than just a biologist)
-        if($key->common_name){
-            array_push($plantsList, 
-            [
-            'name' => $key->common_name,
-            'link' => $key->link,
-            'id' => $key->id
-            ]);
-        } 
-    }
+    // Cache info
+    $cacheKey = md5($url);
+    $cachePath = '../cache/'.$cacheKey;
+    //If Request has been done before
+    if(file_exists($cachePath) && time() - filemtime($cachePath) < 36000)
+    {
+        $plantsList = file_get_contents($cachePath);
+        $plantsList = json_decode($plantsList, true);
+    }else{
+        // Make request to API
+        $result = file_get_contents($url);
 
-    /**
-     * Get Images
-     */
+        // Decode JSON
+        $result = json_decode($result);
+        //Set an array to get all the returns plants
+        $plantsList = [];
+        //Scan the result to get the values needed from JSON object
+        foreach ($result as $key) {
+            //Push these values to the array if there is a common name (so the plant can be known from more than just a biologist)
+            if($key->common_name){
+                array_push($plantsList, 
+                [
+                'name' => $key->common_name,
+                'scientific_name' => $key->scientific_name,
+                'link' => $key->link,
+                'id' => $key->id
+                ]);
+            } 
+        }
 
-    $arrayImages = [];
-    
-    //Create URL for every plants to get their images
-    foreach ($plantsList as $key) {
-        $url = $key['link'].'?token='.TOKEN_TREFLE;
+        /**
+         * Get Images
+         */
 
-        //Request to API
-        $images = file_get_contents($url);
-        $images = json_decode($images);
+        $arrayImages = [];
         
-        //Save images in array
-        array_push($arrayImages, $images->images);
-    }
-    //Merging plants and images arrays
-    for ($i=0; $i < sizeof($plantsList); $i++) { 
-        $plantsList[$i]['images'] = $arrayImages[$i];
-    }
+        //Create URL for every plants to get their images
+        foreach ($plantsList as $key) {
+            $url = $key['link'].'?token='.TOKEN_TREFLE;
+            
+            //Request to API
+            $images = file_get_contents($url);
+
+            //JSON decode
+            $images = json_decode($images, true);
+            //Save images in array
+            array_push($arrayImages, $images['images']);
+        }
+        //Merging plants and images arrays
+        for ($i=0; $i < sizeof($plantsList); $i++) { 
+            $plantsList[$i]['images'] = $arrayImages[$i];
+        }
+        // Save request API in cache if something found
+        if(!empty($plantsList)){
+            $searchSave = json_encode($plantsList);
+            file_put_contents($cachePath, $searchSave);
+        }
+    };
 };
 
 include '../views/pages/search.php';
