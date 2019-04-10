@@ -24,7 +24,7 @@
         After registering or logging in, you’ll either give us the name of your plant, either take a picture of it for
         us to recognize it.
         </p>
-        <img src="../images/plantbg.png" alt="">
+        <img src="<?= URL ?>assets/images/plantbg.png" alt=""> 
     </div>
     <div class="content_info">
         <p class="desc">
@@ -32,14 +32,14 @@
         characteristics, her needs and many more. In order not to get lost, you will create a record for your plant with
         the information you find necessary.
         </p>
-        <img src="../images/plantbg.png" alt="">
+        <img src="<?= URL ?>assets/images/plantbg.png" alt=""> 
     </div>
     <div class="content_info">
         <p class="desc">
         From here we will help you ensure a peaceful life for your plant. You’ll be able to link the calendar of needs
         of your plant to your agenda. You will receive reminders with instructions !
         </p>
-        <img src="../images/plantbg.png" alt="">
+        <img src="<?= URL ?>assets/images/plantbg.png" alt=""> 
     </div>
     <div class="content_info">
       <p class="title">
