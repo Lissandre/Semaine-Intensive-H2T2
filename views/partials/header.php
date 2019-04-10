@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= !empty($title) ? $title : '' ?></title>
     <link rel="stylesheet" href="<?= URL ?>assets/style.css">
+    <link rel="stylesheet" href="<?= URL ?>assets/style_loginpage.css">
 </head>
 <body>
     <header>

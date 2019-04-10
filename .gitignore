@@ -59,4 +59,7 @@ $RECYCLE.BIN/
 cache/*
 !cache/.gitkeep
 
+# PhPStorm
+.idea
+
 # End of https://www.gitignore.io/api/macos,windows

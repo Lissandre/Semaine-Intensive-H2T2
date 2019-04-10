@@ -4,4 +4,4 @@
     
 </div>
 
-<?php include '../views/partials/footer.php' ?>
+<?php include '../views/partials/header.php' ?>
