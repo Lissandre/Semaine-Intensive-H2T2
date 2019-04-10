@@ -1,0 +1,62 @@
+/**
+Login
+**/
+
+.login-background
+{
+    position: absolute;
+    width: 1024px;
+    height: 100vh;
+    left: 0;
+    top: 113px;
+
+    background: url(images/nature.png);
+    opacity: 0.45;
+}
+
+.login-container
+{
+    position: relative;
+    width: 910px;
+    height: 570px;
+    left: 265px;
+    top: 227px;
+
+    background: #FAFAFA;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.login-container .login-logo img
+{
+    height: 233px;
+    width: 233px;
+    margin-top: 122px;
+    margin-left: 96px;
+}
+
+.login-container .login-logo-text
+{
+    /*margin-top: -40px;*/
+    margin-left: 106px;
+    margin-bottom: 215px;
+}
+
+.login-container .login-space
+{
+    /*margin-top: 84px;*/
+    margin-left: 470px;
+}
+
+.login-container .login-space h1
+{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.login-container .login-space .login-subtext
+{
+    font-size: 13px;
+}

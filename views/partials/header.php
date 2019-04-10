@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= !empty($title) ? $title : '' ?></title>
     <link rel="stylesheet" href="<?= URL ?>assets/style.css">
+    <link rel="stylesheet" href="<?= URL ?>assets/style_loginpage.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
 </head>
 <body>
     <header>
