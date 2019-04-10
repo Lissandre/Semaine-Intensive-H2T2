@@ -6,14 +6,8 @@
     </div>
 <?php else: ?>
     <div class="content">
-        <div class="photos">
-            <?php if($result['images']): ?>
-                <?php foreach ($result['images'] as $key): ?>
-                    <img src="<?= $key['url'] ?>" alt="Plant image">
-                <?php endforeach; ?>
-            <?php else: ?>
-                <img src="placeholder" alt="Photo not found">
-            <?php endif; ?>
+        <div class="photo">
+            <img src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>" alt="Plant's photo">
         </div>
         <div class="informations">
             <p class="name">Name : <?= $result['name'] ? $result['name'] : 'Not found' ?></p>
