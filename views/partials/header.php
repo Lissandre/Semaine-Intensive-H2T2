@@ -22,11 +22,11 @@
         </form>
 
             <div class=" button first_button">
-                <a href="/myplants" class="my_plants">My plants</a>
+                <a href="<?= URL ?>myplants" class="my_plants">My plants</a>
             </div>
 
             <div class=" second_button">
-                <a href="//addplant" class="add_plant">Add plant</a>
+                <a href="<?= URL ?>addplant" class="add_plant">Add plant</a>
             </div>
             
             <a href="#">
