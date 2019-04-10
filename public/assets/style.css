@@ -61,14 +61,6 @@ header {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-<<<<<<< HEAD
-}
-
-.button
-{
-    margin: 28px 10px;
-}
-=======
 }
 
 .button
@@ -77,7 +69,6 @@ header {
 }
 
 
->>>>>>> 5e9451a61d86dbdcb49fbcf748c51aa954a8226d
 
 p.button .my_plant
 {
