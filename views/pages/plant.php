@@ -7,7 +7,7 @@
 <?php else: ?>
     <div class="content">
         <div class="photo">
-            <img src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>" alt="Plant's photo">
+            <img src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>" alt="Plant's photo">
         </div>
         <div class="informations">
             <p class="name">Name : <?= $result['name'] ? $result['name'] : 'Not found' ?></p>
