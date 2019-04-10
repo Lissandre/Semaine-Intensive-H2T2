@@ -1,9 +1,10 @@
 <?php 
-require('../config/api_trefle.php');
+require_once '../config/api_trefle.php';
+require_once '../config/calendar/vendor/autoload.php';
 $title = 'The Green Thumb - Datas';
 
  /**
- * API trefle.io (to search a plant by it's name)
+ * API trefle.io (to get the plant's informations)
  * >> REST API
  */
  //Get q param
@@ -50,5 +51,75 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
         $result = 'NOT FOUND'; 
     }
 }
+
+/**
+ * GOOGLE CALENDAR
+ */
+
+// //Begin the auth
+// $client = new Google_Client();
+// //Get the auth file
+// $application_creds = 'credentials.json';
+// $credentials_file = file_exists($application_creds) ? $application_creds : false;
+// //Define the scope => View, edit and delete == calendar
+// define("SCOPE",Google_Service_Calendar::CALENDAR);
+// //Name of the project (create with Google)
+// define("APP_NAME","ProjectH2T2");
+
+// //Auth
+// $client->setAuthConfig($credentials_file);
+// $client->setApplicationName(APP_NAME);
+// $client->setScopes([SCOPE]);
+// $service = new Google_Service_Calendar($client);
+// $id = 'event-id';
+// $event = $service->events->get('primary',$id);
+
+// //Make the new user
+// $attendeeNew = new Google_Service_Calendar_EventAttendee();
+
+// //His mail
+// $attendeeNew->setEmail('mail@test.com');
+// $attendeeNew->setResponseStatus('accepted');
+// $attendeeNew->setOrganizer(true);
+// $attedess = $event->getAttendees();
+// array_push($attedess,$attendeeNew);
+// $event->setAttendees($attedess);
+// $updatedEvent = $service->events->update('primary', $id, $event);
+// var_dump($updatedEvent->getAttendees());
+
+
+
+//Event creation
+// $client = new Google_Client();
+// $application_creds = '../credentials.json';
+// $credentials_file = file_exists($application_creds) ? $application_creds : false;
+// define("SCOPE",Google_Service_Calendar::CALENDAR);
+// define("APP_NAME","ProjectH2T2");
+// $client->setAuthConfig($credentials_file);
+// $client->setApplicationName(APP_NAME);
+// $client->setScopes([SCOPE]);
+// $service = new Google_Service_Calendar($client);
+// $event = new Google_Service_Calendar_Event(array(
+// 	'summary' => 'Test',
+//   	'location' => '27 bis rue du progrès',
+//   	'description' => 'Je galère sa mère',
+//   	'start' => array(
+//     	'dateTime' => '2019-01-01T10:00:00.000-05:00',
+//     	'timeZone' => 'America/Los_Angeles',
+//   	),
+//   	'end' => array(
+//     	'dateTime' => '2019-01-01T10:00:00.000-05:00',
+//     	'timeZone' => 'America/Los_Angeles',
+//   	),
+//   	"creator"=> array(
+//     	"email" => "lissandre.pasdeloup@gmail.com",
+//     	"displayName" => "Lissandre",
+//     	"self"=> true
+//   	),
+// ));
+// $calendarId = 'primary';
+// $event = $service->events->insert($calendarId, $event);
+// printf('Event created: %s', $event->htmlLink);
+
 
 include '../views/pages/plant.php';
