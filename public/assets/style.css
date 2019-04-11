@@ -496,8 +496,7 @@ Login & Signup Errors
 }
 .img_plant_info 
 {
-    width: 415px;
-    height: 415px;
+    height: 30%;
     background-size: cover;
 }
 
@@ -542,6 +541,7 @@ Login & Signup Errors
     border-radius: 10px;
     padding: 5px 20px;
     background-color: #30be76;
+    color: white;
 }
 
 .favoriteInfo
