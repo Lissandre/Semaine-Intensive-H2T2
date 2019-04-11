@@ -19,9 +19,8 @@
 
         <form class="header_search" action="<?= URL ?>search" method="get">
             <label for="name">
-                <img src="<?= URL ?>assets/images/search.svg" alt="ptitloup">
             </label>
-            <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search" >
+            <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
         </form>
 
         <div class="buttons_icons">

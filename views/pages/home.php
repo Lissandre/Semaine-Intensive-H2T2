@@ -1,6 +1,5 @@
 <?php include '../views/partials/header.php' ?>
-
-<div class="content-home">
+<div class="content_home">
     <div class="container">
         <div class="background_main">
         <h1>
@@ -42,10 +41,10 @@
         <img src="<?= URL ?>assets/images/plantbg.png" alt=""> 
     </div>
     <div class="content_info">
-      <p class="title">
+        <p class="title">
         Thereupon, you just have to start the adventure with your plant!
-      </p>
+        </p>
     </div>
-  </div>
+</div>
 
 <?php include '../views/partials/footer.php' ?> 
