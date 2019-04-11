@@ -3,17 +3,15 @@ body
     background-color: #FAFAFA;
     margin: 0;
     padding: 0;
-    font-family: 'Rubik',
-    sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
-
 /** 
 Header 
 **/ 
 
 header {
     width: 100vw;
-    height: 106px;
+    height: 80px;
     display: flex;
     flex-wrap: wrap;
     box-shadow: 0px 6px 10px #efefef;
@@ -23,7 +21,7 @@ header {
 .log_and_name
 {
     margin: 0 auto;
-    margin-top: 23px;
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -66,7 +64,7 @@ header {
 
 .button
 {
-    margin: 28px 10px;
+    margin: auto 10px;
 }
 
 
@@ -278,31 +276,31 @@ Login
         Homepage
 **************************/
 .content_home {
-    background-image: url("../assets/images/plantbg.png");
+    background-image: url("images/plantbg.png");
     background-color: #FAFAFA;
     background-repeat: no-repeat;
 }
 
-.content-home .container {
+.content_home .container {
     margin: 0px 10%;
 }
 
-.content-home h1 {
+.content_home h1 {
     font-weight: 500;
     font-size: 72px;
     padding-top: 10%;
 }
 
-.content-home p.desc_main {
+.content_home p.desc_main {
     width: 686px;
     height: 124px;
-    font-family: Rubik;
+    font-family: "Rubik";
     font-weight: 400;
     font-size: 18px;
     line-height: 29px;
 }
 
-.content-home p.title {
+.content_home p.title {
     font-weight: 500;
     font-size: 18px;
     width: 680px;
@@ -312,10 +310,10 @@ Login
     margin: auto;
 }
 
-.content-home p.desc {
+.content_home p.desc {
     width: 686px;
     height: 124px;
-    font-family: Rubik;
+    font-family: "Rubik";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -324,7 +322,7 @@ Login
     margin: auto;
 }
 
-.content-home .button {
+.content_home .button {
     cursor: pointer;
     border: 2px solid #30BE76;
     border-radius: 8px;
@@ -339,6 +337,6 @@ Login
     box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
 }
 
-.content-home .m-30 {
+.content_home .m-30 {
     margin-top: 30%;
 }
