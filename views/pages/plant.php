@@ -22,7 +22,9 @@
                 <?php for ($i=1; $i < sizeof($favorites); $i++): ?>
                     <p class="favoriteInfo">
                         <?= $favorites[$i] ?>
-                        <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">Delete</button>
+                        <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">
+                            <img src="<?= URL ?>assets/images/x-circle.svg" alt="buttondelete">
+                        </button>
                     </p>
                 <?php endfor; ?>
                 </form>
