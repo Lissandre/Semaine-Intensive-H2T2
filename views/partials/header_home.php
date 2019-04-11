@@ -7,6 +7,7 @@
     <title><?= !empty($title) ? $title : '' ?></title>
     <link rel="stylesheet" href="<?= URL ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?= URL ?>assets/images/logo.png"/>
 </head>
 <body>
     <?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>

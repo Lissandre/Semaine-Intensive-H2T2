@@ -44,7 +44,7 @@
         </p>
         <div class="img_center">
             <img src="<?= URL ?>assets/images/plantbg.png" alt="">
-        </div> 
+        </div>
     </div>
     <div class="content_info">
         <p class="title">

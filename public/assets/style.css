@@ -343,7 +343,6 @@ Login
     text-decoration: none;
 }
 
-
 .content_home .button_center .button{
     margin: auto;
     text-decoration: none;
@@ -360,5 +359,4 @@ Login
 .content_home .img_center{
     display: flex;
     justify-content: center;
-
 }
