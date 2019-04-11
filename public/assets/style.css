@@ -134,6 +134,12 @@ div.button .add_plant
 Search
 **/ 
 
+h2.not_found
+{
+    width: 100%;
+    text-align: center;
+}
+
 .form_search_center
 {
     width: 100%;
