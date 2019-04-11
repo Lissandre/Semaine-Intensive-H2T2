@@ -20,27 +20,31 @@ header {
 
 .log_and_name
 {
+    cursor: pointer;
     margin: 0 auto;
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
+    text-decoration: none;
 }
 
 .logo_img
 {
     width: 50px;
     height: 50px;
+    text-decoration: none;
 }
 
 .name_logo
 {
-    font-family: Rubik;
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: normal;
     color: #000000;
     margin-top: 21px;
+    text-decoration: none;
 }
 
 .header_search
@@ -307,7 +311,7 @@ Login
 .content_home p.desc_main {
     width: 686px;
     height: 124px;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 29px;
@@ -326,7 +330,7 @@ Login
 .content_home p.desc {
     width: 686px;
     height: 124px;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;

@@ -12,10 +12,10 @@
 <body>
     <?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
     <header>
-        <div class="log_and_name">
+        <a class="log_and_name" href="<?= URL ?>myplants">
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
             <p class="name_logo">The Green Thumb</p>
-        </div>
+        </a>
 
         <?php if($_GET['q']!='home' && $_GET['q']!=''): ?>
         <form class="header_search" action="search" method="get">
@@ -25,22 +25,22 @@
         </form>
         <div class="buttons_icons">
             <div class="button">
-                <a class="my_plant" href="myplants">My Plant</a>
+                <a class="my_plant" href="<?= URL ?>myplants">My Plant</a>
             </div>
             <div class="button">
-                <a class="add_plant" href="search">Add Plant</a>
+                <a class="add_plant" href="<?= URL ?>search">Add Plant</a>
             </div>
-            <a class="button" href="logout">
+            <a class="button" href="<?= URL ?>logout">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
         </div>
         <?php elseif($_GET['q']=='home' || $_GET['q']==''): ?>
         <div class="buttons_icons">
             <div class="button">
-                <a class="my_plant" href="login">Login</a>
+                <a class="my_plant" href="<?= URL ?>login">Login</a>
             </div>
             <div class="button">
-                <a class="add_plant" href="signup">Sign Up</a>
+                <a class="add_plant" href="<?= URL ?>signup">Sign Up</a>
             </div>
         </div>
         <?php endif; ?>
