@@ -498,6 +498,7 @@ Login & Signup Errors
 {
     height: 30%;
     background-size: cover;
+    background-position: center;
 }
 
 .informations
