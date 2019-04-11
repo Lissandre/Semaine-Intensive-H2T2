@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
 </head>
 <body>
-    <?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>
+    <?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
     <header>
         <div class="log_and_name">
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">

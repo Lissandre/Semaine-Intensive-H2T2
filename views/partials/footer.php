@@ -1,4 +1,4 @@
-<?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>
+<?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
     <footer>
         © Groupe_09 HETIC P2022
     </footer>
