@@ -57,6 +57,10 @@ header {
     height: 20px;
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
+    background-image: url('images/search.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 30px;
 }
 
 .buttons_icons
@@ -73,7 +77,7 @@ header {
 
 
 
-p.button .my_plant
+div.button .my_plant
 {
     cursor: pointer;
     border: 2px solid #30BE76;
@@ -91,11 +95,11 @@ p.button .my_plant
     font-family: 'Rubik', sans-serif;
 }
 
-p.button .my_plant:hover{
+div.button .my_plant:hover{
     background-color: none;
 }
 
-p.button .add_plant
+div.button .add_plant
 {
     cursor: pointer;
     border: 2px solid #30BE76;
