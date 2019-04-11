@@ -72,17 +72,7 @@ if(isset($_POST['add'])){
 }
 
 //Remove from fav
-echo '<pre>';
-    print_r($favorites);
-    echo '</pre>';
-for ($i=1; $i < sizeof($favorites); $i++){
-    $favorites[$i] = str_replace(' ', '_', $favorites[$i]);
-    
-    if(isset($_POST[$i])) {
-        echo('lourd');
-        echo($key);
-    }
-}
+
 
 
 
