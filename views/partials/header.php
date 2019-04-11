@@ -18,7 +18,7 @@
         </a>
 
         <?php if($_GET['q']!='home' && $_GET['q']!=''): ?>
-            <?php if((empty($plantsList) && !empty($_GET['name']))||!empty($_GET['name'])): ?>
+            <?php if((empty($plantsList) && !empty($_GET['name']))||!empty($_GET['name'])||$_GET['q']!='search'): ?>
                 <form class="header_search" action="<?= URL ?>search" method="get">
                     <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
                 </form>
