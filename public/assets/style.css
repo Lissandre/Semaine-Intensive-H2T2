@@ -87,6 +87,10 @@ p.button .my_plant
     font-family: Rubik;
 }
 
+p.button .my_plant:hover{
+    background-color: none;
+}
+
 p.button .add_plant
 {
     cursor: pointer;
