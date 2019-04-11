@@ -472,6 +472,7 @@ Login & Signup Errors
     text-transform: capitalize;
 }
 
+
 .all_info 
 {
     width: 50%;
@@ -557,6 +558,7 @@ Login & Signup Errors
 .favoriteInfo button
 {
     margin-left: 10px;
+    border: none;
 }
 
 /*
