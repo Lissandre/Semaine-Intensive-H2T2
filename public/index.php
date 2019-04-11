@@ -5,7 +5,7 @@ include '../config/database.php';
  * Routing
  */
 
-define ('URL','http://localhost:8888/Semaine-Intensive-H2T2/public/');
+define ('URL','http://localhost:8888/public/');
 //Get q param
 $q = !empty($_GET['q']) ? $_GET['q'] : 'home';
 //define controller
@@ -22,6 +22,8 @@ if($q == 'home' || $q == 'index'){
     $controller = 'login';
 }else if($q == 'signup'){
     $controller = 'signup';
+}else if($q == 'logout'){
+    $controller = 'logout';
 }else if($q == 'plant'){
     header('Location: search');
 }else if (preg_match('/^plant\/[1-9][0-9]*$/', $q)){
