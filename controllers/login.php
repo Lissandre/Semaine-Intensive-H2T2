@@ -4,8 +4,8 @@ $title = 'The Green Thumb - Login';
 // Error and success messages
 
 $messages = [
-    'error' => [],
-    'success' => [],
+    'mail-error' => [],
+    'pwd-error' => [],
 ];
 
 if (!empty($_POST))
@@ -18,16 +18,16 @@ if (!empty($_POST))
 
     if (empty($login))
     {
-        $messages['error'][] = 'Please enter an e-mail address';
+        $messages['mail-error'][] = 'Please enter an e-mail address';
     }
 
     if (empty($password))
     {
-        $messages['error'][] = 'Please enter a password';
+        $messages['pwd-error'][] = 'Please enter a password';
     }
 
     // Success
-    if (empty($messages['error']))
+    if (empty($messages['mail-error']) && empty($messages['pwd-error']))
     {
         $data = [
             'name'=> $login,
@@ -51,7 +51,7 @@ if (!empty($_POST))
         }
         else
         {
-            $messages['error'][] = 'Incorrect informations';
+            $messages['pwd-error'][] = 'Incorrect informations';
         }
     }
 }

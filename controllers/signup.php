@@ -2,8 +2,8 @@
 $title = 'The Green Thumb - Sign Up';
 
 $messages = [
-    'error' => [],
-    'success' => [],
+    'mail-error' => [],
+    'pwd-error' => [],
 ];
 
 // Form sent
@@ -18,12 +18,12 @@ if(!empty($_POST))
 
     if (empty($login))
     {
-        $messages['error'][] = 'missing login';
+        $messages['mail-error'][] = 'Your email is missing';
     }
 
     elseif (strlen($password) < 5)
     {
-        $messages['error'][] = 'password too short';
+        $messages['pwd-error'][] = 'Your password is too short';
     }
 
     // Check if username already exists
@@ -32,10 +32,10 @@ if(!empty($_POST))
     $user = $pdo->query($temp)->fetch();
     if ($user->login === $login)
     {
-        $messages['error'][] = 'This mail already have an account';
+        $messages['mail-error'][] = 'This mail already have an account';
     }
 // Success
-    if (empty($messages['error']))
+    if (empty($messages['mail-error']) && empty($messages['pwd-error']))
     {
         $data = [
             'login'=> $login,
@@ -49,9 +49,6 @@ if(!empty($_POST))
         $_SESSION["loggedin"] = true;
         $_SESSION["login"] = $login;
         $_SESSION["password"] = $password;
-
-        $messages['success'][] = 'Welcome to The Green Thumb !';
-        header("Location: myplants");
 
         $_POST['name'] = '';
         $_POST['password'] = '';
