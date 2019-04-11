@@ -166,6 +166,7 @@ h2.not_found
 {
     padding: 100px 140px 0 140px;
     display:flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 

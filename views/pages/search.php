@@ -4,7 +4,7 @@
 <?php if(!empty($plantsList)): ?>
     <?php foreach($plantsList as $key): ?>
         <div class="plantsText">
-            <img src="<?= !empty($key['images'][0]) ? $key['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>" alt="plant picture" class="plant_image_home">
+            <img src="<?= !empty($key['images'][0]) ? $key['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>" alt="plant picture" class="plant_image_home">
             <p class="plant_name"><?= $key['name'] ?></p>
             <a href="<?= 'plant/'.$key['id'] ?>" class="plant_link">
                 <img src="<?= URL ?>assets/images/plus.svg" alt="petit plus"> 
@@ -13,7 +13,7 @@
         </div>
     <?php endforeach; ?>
 <?php elseif(empty($plantsList) && !empty($_GET['name'])): ?>
-    <h2><?= ucfirst(strtolower($plant)) ?> not found</h2>
+    <h2 class="not_found"><?= ucfirst(strtolower($plant)) ?> not found</h2>
 <?php elseif(empty($plantsList) && empty($_GET['name'])): ?>
 <div class="form_search_center">
     <form class="main_search" action="#" method="get">
