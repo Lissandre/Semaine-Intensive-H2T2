@@ -16,29 +16,33 @@
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
             <p class="name_logo">The Green Thumb</p>
         </div>
-        
 
-        <form class="header_search" action="<?= URL ?>search" method="get">
+        <?php if($_GET['q']!='home' && $_GET['q']!=''): ?>
+        <form class="header_search" action="search" method="get">
             <label for="name">
             </label>
             <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
         </form>
-
         <div class="buttons_icons">
-            <p class="button">
-                <a class="my_plant" href="<?= URL ?>myPlant">My Plant</a>
-            </p>
-
-            <p class="button">
-                <a class="add_plant" href="<?= URL ?>search">Add Plant</a>
-            </p>
-            
-            <a href="<?= URL ?>logout">
-
-            <a class="button" href="<?= URL ?>home">
-
+            <div class="button">
+                <a class="my_plant" href="myplant">My Plant</a>
+            </div>
+            <div class="button">
+                <a class="add_plant" href="search">Add Plant</a>
+            </div>
+            <a class="button" href="logout">
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
         </div>
+        <?php elseif($_GET['q']=='home' || $_GET['q']==''): ?>
+        <div class="buttons_icons">
+            <div class="button">
+                <a class="my_plant" href="login">Login</a>
+            </div>
+            <div class="button">
+                <a class="add_plant" href="signup">Sign Up</a>
+            </div>
+        </div>
+        <?php endif; ?>
     </header>
     <?php endif; ?>

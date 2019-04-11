@@ -1,4 +1,4 @@
-<?php include '../views/partials/header_home.php' ?> 
+<?php include '../views/partials/header.php' ?> 
 <div class="content_home">
     <div class="container">
         <div class="background_main">
