@@ -35,16 +35,16 @@
                     <input type="password" name="password" id="password" value="<?= !empty($_POST['password']) ? $_POST['password'] : '' ?>" placeholder="••••••••••••••">
                 </div>
 
-                    <div class="field">
-                        <input class="submit_button" type="submit" value="Login">
-                    </div>
-                </form>
-            <div class="new">
-                <p class="login_subtext">New to The Green Thumb ?</p>
-                <a href="<?= URL ?>signup">Create account here</a>
-            </div>
+                <div class="field">
+                    <input class="submit_button" type="submit" value="Login">
+                </div>
+            </form>
+        <div class="new">
+            <p class="login_subtext">New to The Green Thumb ?</p>
+            <a href="<?= URL ?>signup">Create account here</a>
         </div>
     </div>
+</div>
 
 
 <?php include '../views/partials/footer.php' ?>
