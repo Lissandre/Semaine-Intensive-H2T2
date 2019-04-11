@@ -52,6 +52,14 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
     }
 }
 
+/**
+ * Favorites infos
+ */
+$favorites = [];
+function addToFav($name){
+    array_push($favorites, $id, $result[$name]);
+}
+
 
 
 
