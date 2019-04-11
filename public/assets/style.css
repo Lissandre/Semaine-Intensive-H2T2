@@ -332,11 +332,23 @@ Login
     font-weight: 500;
     color: white;
     text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+}
+
+.content_home .button:nth-child(2){
+    margin: 10% auto;
 }
 
 .content_home .m-30 {
     margin-top: 30%;
+}
+
+.content_home .img_center{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
+
 }
