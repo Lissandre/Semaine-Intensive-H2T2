@@ -10,7 +10,7 @@
         
         <div class="photo_and_title">
             <h2 class="title_plan_add"> <?= $result['name'] ? $result['name'] : 'Not found' ?> </h2>
-            <img class="img_plant_info" src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>" alt="Plant's photo">
+            <div class="img_plant_info" style="background-image:url(<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>)"></div>
         </div>
 
         <div class="all_info">

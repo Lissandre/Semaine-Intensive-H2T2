@@ -191,6 +191,8 @@ h2.not_found
 {
     width: 200px;
     height: 200px;
+    background-size: cover;
+    background-position: center;
 }
 
 .plant_link
@@ -493,8 +495,9 @@ Login & Signup Errors
 }
 .img_plant_info 
 {
-    width: 300px;
-    height: 300px;
+    width: 415px;
+    height: 415px;
+    background-size: cover;
 }
 
 .informations
