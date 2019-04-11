@@ -25,7 +25,7 @@
         </form>
         <div class="buttons_icons">
             <div class="button">
-                <a class="my_plant" href="myplant">My Plant</a>
+                <a class="my_plant" href="myplants">My Plant</a>
             </div>
             <div class="button">
                 <a class="add_plant" href="search">Add Plant</a>
