@@ -18,12 +18,16 @@ if (!empty($_POST))
 
     if (empty($login))
     {
-        $messages['mail-error'][] = 'Please enter an e-mail address';
+        $messages['mail-error'][] = 'Please enter an email address';
     }
 
     if (empty($password))
     {
         $messages['pwd-error'][] = 'Please enter a password';
+    }
+    if (!empty($login) && filter_var($login, FILTER_VALIDATE_EMAIL) == FALSE)
+    {
+        $messages['mail-error'][] = 'Please enter a valid email address';
     }
 
     // Success

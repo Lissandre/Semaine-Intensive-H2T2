@@ -32,13 +32,13 @@
 
                 <?php foreach ($messages['pwd-error'] as $message): ?>
                     <div class="message error">
-                        <img src="<?= URL ?>assets/images/error.svg">
                         <?= $message; ?>
+                        <img src="<?= URL ?>assets/images/error.svg">
                     </div>
                 <?php endforeach; ?>
 
                 <div class="field">
-                    <input class="submit_button" type="submit" value="Login">
+                    <input class="submit_button" type="submit" value="Sign up">
                 </div>
             </form>
         <div class="new">
