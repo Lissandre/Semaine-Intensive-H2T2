@@ -69,9 +69,9 @@ $temp = $temp->fetch();
 if($temp)
 {
     $favorites = [
-        $temp->plant_info_1,
-        $temp->plant_info_2,
-        $temp->plant_info_3,
+        $temp->plant_info_A,
+        $temp->plant_info_B,
+        $temp->plant_info_C,
     ];
     //get data to prepare pdo
     if(isset($_POST['add'])){
@@ -88,21 +88,23 @@ if($temp)
             //Save fav of this plant to database
             //What we want to insert
             $data = [
-                'id_user' => $_SESSION['login'],
-                'id_plant' => basename($_GET['q']),
-                'plant_info_1' => $export[0],
-                'plant_info_2' => $export[1],
-                'plant_info_3' => $export[2],
+                'plant_info_A' => $export[0],
+                'plant_info_B' => $export[1],
+                'plant_info_C' => $export[2],
             ];
         }
     }
     //Add to fav
     if ($data) {
-        $prepare = $pdo->prepare(
-            'UPDATE plants SET (id_user = :id_user, id_plant = :id_plant, plant_info_1 = :plant_info_1, plant_info_2 = :plant_info_2, plant_info_3 = :plant_info_3) WHERE id_plant = '.$id.' AND id_user = '.$_SESSION["login"]
-            );
+        $prepare = $pdo->prepare('UPDATE plants SET (plant_info_A = :plant_info_A, plant_info_B = :plant_info_B, plant_info_C = :plant_info_C) WHERE id_plant = '.$id.' AND id_user = "'.$_SESSION["login"].'"');
+        $exacute = $prepare->execute($data);
         // Injection
-        $execute = $prepare->execute($data);
+        // $execute = $prepare->execute($data);
+        echo $export[1];
+        $favorites = [$export[0],$export[1],$export[2]];
+        echo '<pre>';
+        var_dump($prepare);
+        echo '</pre>';
     }
 }else{
     //get data to prepare pdo
@@ -122,24 +124,37 @@ if($temp)
             $data = [
                 'id_user' => $_SESSION['login'],
                 'id_plant' => basename($_GET['q']),
-                'plant_info_1' => $export[0],
-                'plant_info_2' => $export[1],
-                'plant_info_3' => $export[2]
+                'plant_info_A' => $export[0],
+                'plant_info_B' => $export[1],
+                'plant_info_C' => $export[2]
             ];
         }
     }
     if ($data) {
-        $prepare = $pdo->prepare('INSERT INTO plants (id_user, id_plant, plant_info_1, plant_info_2, plant_info_3) VALUES (:id_user, :id_plant, :plant_info_1, :plant_info_2, :plant_info_3)');
+        $prepare = $pdo->prepare('INSERT INTO plants (id_user, id_plant, plant_info_A, plant_info_B, plant_info_C) VALUES (:id_user, :id_plant, :plant_info_A, :plant_info_B, :plant_info_C)');
         // Injection
         $execute = $prepare->execute($data);
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
+        $favorites = [$export[0],$export[1],$export[2]];
     }
 }
 
-
 //Remove from fav
+for ($i=0; $i <= 2; $i++) { 
+    if(isset($_POST[$i])){
+        ($i==1 ? $value = 'plant_info_A' :($i==2 ? $value = 'plant_info_B' : $value ='plant_info_C'));
+        $exec = $pdo->exec(
+            'UPDATE 
+                plants 
+            SET 
+                (plant_info_A = oui )
+            WHERE 
+                (id_plant = 169956 AND id_user = lissandre.pasdeloup@gmail.com)'
+        );
+        echo '<pre>';
+        var_dump($exec);
+        echo '</pre>';
+    }
+}
 
 
 

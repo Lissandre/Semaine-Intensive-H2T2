@@ -534,6 +534,10 @@ Login & Signup Errors
 .label_input_inline input
 {
     margin-left: 20px;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 input[type="submit"].label_input_inline 
@@ -573,6 +577,7 @@ input[type="submit"].label_input_inline
 .favoriteInfo button
 {
     border: none;
+    cursor: pointer;
 }
 
 /*

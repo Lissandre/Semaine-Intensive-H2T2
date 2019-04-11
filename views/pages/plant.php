@@ -121,9 +121,7 @@
                         </label>
                     </div>
 
-                    <div class="label_input_inline">
-                        <input type="submit" name ="add" value="Add">
-                    </div>
+                    <input class="label_input_inline" type="submit" name ="add" value="Add">
 
                 </form>
             </div>
