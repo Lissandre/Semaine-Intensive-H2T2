@@ -536,6 +536,14 @@ Login & Signup Errors
     margin-left: 20px;
 }
 
+.label_input_inline input[type="submit"]
+{
+    border: 1px solid #30be76;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: #30be76;
+}
+
 .favoriteInfo
 {
     background-color: #fdfdfd;
