@@ -5,11 +5,13 @@ body
     padding: 0;
     font-family: 'Rubik', sans-serif;
 }
+
 /** 
 Header 
 **/ 
 
-header {
+header
+{
     width: 100vw;
     height: 80px;
     display: flex;
@@ -82,8 +84,6 @@ header {
     margin: auto 10px;
 }
 
-
-
 div.button .my_plant
 {
     cursor: pointer;
@@ -102,7 +102,8 @@ div.button .my_plant
     font-family: 'Rubik', sans-serif;
 }
 
-div.button .my_plant:hover{
+div.button .my_plant:hover
+{
     background-color: none;
 }
 
@@ -122,7 +123,6 @@ div.button .add_plant
     text-decoration: none;
     font-family: 'Rubik', sans-serif;
 }
-
 
 .log_out_img
 {
@@ -181,9 +181,11 @@ Search
 }
 
 /**
-Login
+Login & Signup
 **/
-.login_page{
+
+.login_page
+{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,7 +193,8 @@ Login
     width: 100vw;
 }
 
-.login_page input{
+.login_page input
+{
     width: 250px;
     height: 20px;
     border: 0px;
@@ -289,29 +292,59 @@ Login
     text-decoration: none;
 }
 
+/**
+Login & Signup Errors
+**/
+
+.message
+{
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.message.error
+{
+    color: #FF0000;
+}
 
 
+.message.error img
+{
+    padding-left: 30px;
+    width: 18px;
+}
 
-/**************************
-        Homepage
-**************************/
-.content_home {
+.message.success
+{
+    color: green;
+}
+
+/**
+Login & Signup Errors
+**/
+
+.content_home
+{
     background-image: url("images/plantbg.png");
     background-color: #FAFAFA;
     background-repeat: no-repeat;
 }
 
-.content_home .container {
+.content_home .container
+{
     margin: 0px 10%;
 }
 
-.content_home h1 {
+.content_home h1
+{
     font-weight: 500;
     font-size: 72px;
     padding-top: 10%;
 }
 
-.content_home p.desc_main {
+.content_home p.desc_main
+{
     width: 686px;
     height: 124px;
     font-family: "Rubik", sans-serif;
@@ -320,7 +353,8 @@ Login
     line-height: 29px;
 }
 
-.content_home p.title {
+.content_home p.title
+{
     font-weight: 500;
     font-size: 18px;
     width: 680px;
@@ -330,7 +364,8 @@ Login
     margin: auto;
 }
 
-.content_home p.desc {
+.content_home p.desc
+{
     width: 686px;
     height: 124px;
     font-family: "Rubik", sans-serif;
@@ -342,7 +377,8 @@ Login
     margin: auto;
 }
 
-.content_home .button {
+.content_home .button
+{
     cursor: pointer;
     border: 2px solid #30BE76;
     border-radius: 8px;
@@ -359,20 +395,24 @@ Login
     text-decoration: none;
 }
 
-.content_home .button_center .button{
+.content_home .button_center .button
+{
     margin: auto;
     text-decoration: none;
 }
 
-.content_home .button:nth-child(2){
+.content_home .button:nth-child(2)
+{
     margin: 10% auto;
 }
 
-.content_home .m-30 {
+.content_home .m-30
+{
     margin-top: 30%;
 }
 
-.content_home .img_center{
+.content_home .img_center
+{
     display: flex;
     justify-content: center;
 }
