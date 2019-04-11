@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= !empty($title) ? $title : '' ?></title>
-    <link rel="icon" href="<?= URL ?>assets/images/logo.png">
     <link rel="stylesheet" href="<?= URL ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
     <link rel="icon" type="image/png" href="<?= URL ?>assets/images/logo.png"/>
 </head>
 <body>
-    <?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
+    <?php if($_GET['q']!='login' && $_GET['q']!='connect'): ?>
     <header>
         <div class="log_and_name">
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
@@ -19,19 +18,13 @@
         </div>
         
 
-        <form class="header_search" action="<?= URL ?>search" method="get">
-            <label for="name">
-            </label>
-            <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
-        </form>
-
         <div class="buttons_icons">
             <p class="button">
-                <a class="my_plant" href="<?= URL ?>myPlant">My Plant</a>
+                <a class="my_plant" href="<?= URL ?>connect">Login</a>
             </p>
 
             <p class="button">
-                <a class="add_plant" href="<?= URL ?>search">Add Plant</a>
+                <a class="add_plant" href="<?= URL ?>signup">Sign Up</a>
             </p>
             
             <a href="<?= URL ?>logout">

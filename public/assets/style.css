@@ -340,6 +340,12 @@ Login
     align-items: center;
     justify-content: center;
     box-shadow: 0px 6px rgba(51, 125, 59, 0.03);
+    text-decoration: none;
+}
+
+.content_home .button_center .button{
+    margin: auto;
+    text-decoration: none;
 }
 
 .content_home .button:nth-child(2){
@@ -353,6 +359,4 @@ Login
 .content_home .img_center{
     display: flex;
     justify-content: center;
-    margin-bottom: 15%;
-
 }

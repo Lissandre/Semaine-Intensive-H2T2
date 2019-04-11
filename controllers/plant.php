@@ -55,12 +55,34 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
 /**
  * Favorites infos
  */
-$favorites = [];
-$postFav = $_GET;
-echo '<pre>';
-print_r($postFav);
-echo '</pre>';
 
+$favorites = [];
+
+//Add to fav
+if(isset($_POST['add'])){
+    array_push($favorites, $id);
+    if(!empty($_POST['PHP_favBox'])) {
+    // Counting number of checked checkboxes.
+        $checked_count = count($_POST['PHP_favBox']);
+        // Loop to store values of individual checked checkbox.
+        foreach($_POST['PHP_favBox'] as $selected) {
+            array_push($favorites, $selected);
+        }
+    }
+}
+
+//Remove from fav
+echo '<pre>';
+    print_r($favorites);
+    echo '</pre>';
+for ($i=1; $i < sizeof($favorites); $i++){
+    $favorites[$i] = str_replace(' ', '_', $favorites[$i]);
+    
+    if(isset($_POST[$i])) {
+        echo('lourd');
+        echo($key);
+    }
+}
 
 
 

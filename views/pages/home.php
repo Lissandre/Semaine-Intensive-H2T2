@@ -1,4 +1,4 @@
-<?php include '../views/partials/header.php' ?>
+<?php include '../views/partials/header_home.php' ?> 
 <div class="content_home">
     <div class="container">
         <div class="background_main">
@@ -10,8 +10,8 @@
             investing yourself? Make your house greener without necessarily having the time or knowledge ... without
             necessarily having a green thumb ?
         </p>
-        <p class="button"> 
-            Get started
+        <p class="">
+            <a class="button" href="<?= URL ?>signup">Get Started</a>
         </p>
     </div>
     <div class="content_info m-30">
@@ -44,14 +44,14 @@
         </p>
         <div class="img_center">
             <img src="<?= URL ?>assets/images/plantbg.png" alt="">
-        </div> 
+        </div>
     </div>
     <div class="content_info">
         <p class="title">
         Thereupon, you just have to start the adventure with your plant!
         </p>
-        <p class="button"> 
-            Sign up now
+        <p class="button_center">
+            <a class="button" href="<?= URL ?>signup">Sign up now</a>
         </p>
     </div>
 </div>
