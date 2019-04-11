@@ -52,6 +52,15 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
     }
 }
 
+/**
+ * Favorites infos
+ */
+$favorites = [];
+$postFav = $_GET;
+echo '<pre>';
+print_r($postFav);
+echo '</pre>';
+
 
 
 

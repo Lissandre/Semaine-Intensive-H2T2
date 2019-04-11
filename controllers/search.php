@@ -13,13 +13,13 @@ $title = 'The Green Thumb - Search';
 
 if(!empty($_GET['name']))
 {
-    $plant=$_GET['name'];
+    $plant=strtolower($_GET['name']);
     // Create URL
     $url = 'https://trefle.io/api/plants';
     $url .= '?'.http_build_query([
         'q' => $plant,
         'token' => TOKEN_TREFLE,
-        'page_size' => '15',
+        'page_size' => '20',
     ]);
 
     // Cache info
