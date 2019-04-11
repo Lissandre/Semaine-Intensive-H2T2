@@ -6,10 +6,14 @@
     </div>
 <?php else: ?>
     <div class="content">
+
+        <h2 class="title_plan_add"> <?= $result['name'] ? $result['name'] : 'Not found' ?> </h2>
         <div class="photo">
             <img src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>" alt="Plant's photo">
         </div>
         <div class="favorites">
+
+            <p class="favoris_infos_title">Favoris infos</p>
             <form action="#" method="post">
             <?php for ($i=1; $i < sizeof($favorites); $i++): ?>
                 <p class="favoriteInfo">
@@ -19,7 +23,10 @@
             <?php endfor; ?>
             </form>
         </div>
+
         <div class="informations">
+
+            <p class="all_infos_title">All infos</p>
             <form action="#" method="post">
                 <label class="name">
                     Name : <?= $result['name'] ? $result['name'] : 'Not found' ?>
