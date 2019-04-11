@@ -19,7 +19,7 @@ if(!empty($_GET['name']))
     $url .= '?'.http_build_query([
         'q' => $plant,
         'token' => TOKEN_TREFLE,
-        'page_size' => '20',
+        'page_size' => '30',
     ]);
 
     // Cache info

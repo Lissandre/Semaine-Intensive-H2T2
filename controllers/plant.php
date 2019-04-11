@@ -3,11 +3,14 @@ require_once '../config/api_trefle.php';
 require_once '../config/calendar/vendor/autoload.php';
 $title = 'The Green Thumb - Datas';
 
- /**
- * API trefle.io (to get the plant's informations)
- * >> REST API
- */
- //Get q param
+//Start session to save infos later
+session_start();
+
+/**
+* API trefle.io (to get the plant's informations)
+* >> REST API
+*/
+//Get q param
 $id = basename($_GET['q']);
 // Create URL
 $url = 'https://trefle.io/api/plants/'.$id.'?token='.TOKEN_TREFLE;
@@ -55,21 +58,86 @@ if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
 /**
  * Favorites infos
  */
-
 $favorites = [];
+$export = new SplFixedArray(3);
+$data = [];
 
-//Add to fav
-if(isset($_POST['add'])){
-    array_push($favorites, $id);
-    if(!empty($_POST['PHP_favBox'])) {
-    // Counting number of checked checkboxes.
-        $checked_count = count($_POST['PHP_favBox']);
-        // Loop to store values of individual checked checkbox.
-        foreach($_POST['PHP_favBox'] as $selected) {
-            array_push($favorites, $selected);
+//Get saved fav
+$temp = $pdo->query('SELECT * FROM plants WHERE id_plant = '.$id.' AND id_user = \''.$_SESSION['login'].'\'');
+$temp = $temp->fetch();
+//If datas found
+if($temp)
+{
+    $favorites = [
+        $temp->plant_info_1,
+        $temp->plant_info_2,
+        $temp->plant_info_3,
+    ];
+    //get data to prepare pdo
+    if(isset($_POST['add'])){
+        if(!empty($_POST['PHP_favBox'])) {
+        // Counting number of checked checkboxes.
+            $checked_count = count($_POST['PHP_favBox']);
+            // Loop to store values of individual checked checkbox.
+            for ($i=0; $i < count($_POST['PHP_favBox']); $i++) { 
+                $export[$i] = $_POST['PHP_favBox'][$i];
+            }
+            for ($i=count($_POST['PHP_favBox']); $i < 2; $i++) { 
+                $export[$i] = '\'null\'';
+            }
+            //Save fav of this plant to database
+            //What we want to insert
+            $data = [
+                'id_user' => $_SESSION['login'],
+                'id_plant' => basename($_GET['q']),
+                'plant_info_1' => $export[0],
+                'plant_info_2' => $export[1],
+                'plant_info_3' => $export[2],
+            ];
         }
     }
+    //Add to fav
+    if ($data) {
+        $prepare = $pdo->prepare(
+            'UPDATE plants SET (id_user = :id_user, id_plant = :id_plant, plant_info_1 = :plant_info_1, plant_info_2 = :plant_info_2, plant_info_3 = :plant_info_3) WHERE id_plant = '.$id.' AND id_user = '.$_SESSION["login"]
+            );
+        // Injection
+        $execute = $prepare->execute($data);
+    }
+}else{
+    //get data to prepare pdo
+    if(isset($_POST['add'])){
+        if(!empty($_POST['PHP_favBox'])) {
+        // Counting number of checked checkboxes.
+            $checked_count = count($_POST['PHP_favBox']);
+            // Loop to store values of individual checked checkbox
+            for ($i=0; $i < count($_POST['PHP_favBox']); $i++) { 
+                $export[$i] = $_POST['PHP_favBox'][$i];
+            }
+            for ($i=count($_POST['PHP_favBox']); $i <= 2; $i++) { 
+                $export[$i] = '';
+            }
+            //Save fav of this plant to database
+            //What we want to insert
+            $data = [
+                'id_user' => $_SESSION['login'],
+                'id_plant' => basename($_GET['q']),
+                'plant_info_1' => $export[0],
+                'plant_info_2' => $export[1],
+                'plant_info_3' => $export[2]
+            ];
+        }
+    }
+    if ($data) {
+        $prepare = $pdo->prepare('INSERT INTO plants (id_user, id_plant, plant_info_1, plant_info_2, plant_info_3) VALUES (:id_user, :id_plant, :plant_info_1, :plant_info_2, :plant_info_3)');
+        // Injection
+        $execute = $prepare->execute($data);
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
 }
+
 
 //Remove from fav
 

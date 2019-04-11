@@ -10,7 +10,7 @@
         
         <div class="photo_and_title">
             <h2 class="title_plan_add"> <?= $result['name'] ? $result['name'] : 'Not found' ?> </h2>
-            <div class="img_plant_info" style="background-image:url(<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>)"></div>
+            <div class="img_plant_info" style="background-image:url(<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>)"></div>
         </div>
 
         <div class="all_info">
@@ -19,13 +19,15 @@
                 <p class="favoris_infos_title">Favoris infos</p>
                 
                 <form action="#" method="post">
-                <?php for ($i=1; $i < sizeof($favorites); $i++): ?>
+                <?php for ($i=0; $i < sizeof($favorites); $i++): ?>
+                <?php if($favorites[$i]!=''): ?>
                     <p class="favoriteInfo">
                         <?= $favorites[$i] ?>
                         <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">
                             <img src="<?= URL ?>assets/images/x-circle.svg" alt="buttondelete">
                         </button>
                     </p>
+                <?php endif; ?>
                 <?php endfor; ?>
                 </form>
             </div>
