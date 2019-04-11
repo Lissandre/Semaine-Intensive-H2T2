@@ -18,11 +18,11 @@
         </a>
 
         <?php if($_GET['q']!='home' && $_GET['q']!=''): ?>
-        <form class="header_search" action="<?= URL ?>search" method="get">
-            <label for="name">
-            </label>
-            <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
-        </form>
+            <?php if((empty($plantsList) && !empty($_GET['name']))||!empty($_GET['name'])): ?>
+                <form class="header_search" action="<?= URL ?>search" method="get">
+                    <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
+                </form>
+            <?php endif; ?>
         <div class="buttons_icons">
             <div class="button">
                 <a class="my_plant" href="<?= URL ?>myplants">My Plant</a>

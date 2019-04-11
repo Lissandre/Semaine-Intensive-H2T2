@@ -14,6 +14,12 @@
     <?php endforeach; ?>
 <?php elseif(empty($plantsList) && !empty($_GET['name'])): ?>
     <h2><?= ucfirst(strtolower($plant)) ?> not found</h2>
+<?php elseif(empty($plantsList) && empty($_GET['name'])): ?>
+<div class="form_search_center">
+    <form class="main_search" action="#" method="get">
+        <input class="search_bar_main" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
+    </form>
+</div>
 <?php endif ?>
 </div>
 

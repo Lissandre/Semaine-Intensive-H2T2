@@ -134,10 +134,31 @@ div.button .add_plant
 Search
 **/ 
 
+.form_search_center
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search_bar_main
+{
+    border: none;
+    border-bottom : 1px solid #A8A8A8;
+    width: 400px;
+    height: 25px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    background-image: url('images/search.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 30px;
+    background-color: #FAFAFA;
+}
+
 .dispResearch
 {
-    padding-top: 100px;
-    padding-left: 140px;
+    padding: 100px 140px 0 140px;
     display:flex;
     flex-wrap: wrap;
 }
