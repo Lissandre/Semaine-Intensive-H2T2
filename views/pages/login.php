@@ -1,17 +1,5 @@
 <?php include '../views/partials/header.php' ?>
 
-<?php foreach ($messages['error'] as $message): ?>
-    <div class="message error">
-        <?= $message; ?>
-    </div>
-<?php endforeach; ?>
-
-<?php foreach ($messages['success'] as $message): ?>
-    <div class="message success">
-        <?= $message; ?>
-    </div>
-<?php endforeach; ?>
-
 <div class="login_bg"></div>
 <div class="login_page">
     <div class="login_container">
@@ -27,15 +15,31 @@
                     <label for="login">Email address</label>
                     <br>
                     <input type="text" name="login" id="login" value="<?= !empty($_POST['login']) ? $_POST['login'] : '' ?>" placeholder="plant@green.com">
+
+                    <?php foreach ($messages['mail-error'] as $message): ?>
+                        <div class="message error">
+                            <?= $message; ?>
+                            <img src="<?= URL ?>assets/images/error.svg">
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
 
                 <div class="field">
                     <label for="password">Password</label>
                     <br>
                     <input type="password" name="password" id="password" value="<?= !empty($_POST['password']) ? $_POST['password'] : '' ?>" placeholder="••••••••••••••">
+
+                    <?php foreach ($messages['pwd-error'] as $message): ?>
+                        <div class="message error">
+                            <?= $message; ?>
+                            <img src="<?= URL ?>assets/images/error.svg">
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
 
-                <div class="field">
+        <div class="field">
                     <input class="submit_button" type="submit" value="Login">
                 </div>
             </form>
