@@ -16,6 +16,9 @@ header {
     flex-wrap: wrap;
     box-shadow: 0px 6px 10px #efefef;
     background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .log_and_name
