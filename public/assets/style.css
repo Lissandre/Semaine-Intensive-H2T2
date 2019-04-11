@@ -443,3 +443,132 @@ Login & Signup Errors
     display: flex;
     justify-content: center;
 }
+/*
+        Page plant
+*/
+
+.content_infos 
+{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    margin: 2% 10%;
+}
+
+.photo_and_title 
+{
+    width: 40%;
+    margin-right: 5%;
+}
+
+.title_plan_add
+{
+    color: #A8A8A8;
+    font-family: 'Rubik';
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.all_info 
+{
+    width: 50%;
+    margin-top: 60px;
+}
+
+.favoris_infos_title
+{
+    font-family: 'Rubik';
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.all_infos_title
+{
+    font-family: 'Rubik';
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.img_plant_info 
+{
+    width: 300px;
+    height: 300px;
+}
+
+.informations
+{
+    margin-top: 20px;
+}
+.informations form 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.label_input_inline
+{
+    background-color: white;
+    width: 400px;
+    height: 45px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.label_input_inline label
+{
+    margin-left: 10px;
+    font-family: 'Rubik';
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.label_input_inline input
+{
+    margin-left: 20px;
+}
+
+.favoriteInfo
+{
+    background-color: #fdfdfd;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #fdfdfd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: black;
+    font-family: 'Rubik';
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+
+
+.favoriteInfo button
+{
+    margin-left: 10px;
+}
+
+/*
+404
+*/
+.notfound {
+    font-size: 100px;
+    text-align: center;
+}
+
+.notfound_desc {
+    font-size: 25px;
+    text-align: center;
+}
+
+.gif {
+    text-align: center;
+}

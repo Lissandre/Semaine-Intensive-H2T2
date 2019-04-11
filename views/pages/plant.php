@@ -10,12 +10,14 @@
         
         <div class="photo_and_title">
             <h2 class="title_plan_add"> <?= $result['name'] ? $result['name'] : 'Not found' ?> </h2>
-            <img class="img_plant_info" src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>" alt="Plant's photo">
+            <img class="img_plant_info" src="<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.jpg' ?>" alt="Plant's photo">
         </div>
 
         <div class="all_info">
+
             <div class="favorites">
                 <p class="favoris_infos_title">Favoris infos</p>
+                
                 <form action="#" method="post">
                 <?php for ($i=1; $i < sizeof($favorites); $i++): ?>
                     <p class="favoriteInfo">
