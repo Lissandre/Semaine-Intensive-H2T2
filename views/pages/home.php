@@ -24,7 +24,7 @@
         us to recognize it.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>assets/images/plantbg.png" alt="">
+            <img src="<?= URL ?>assets/images/first.gif" alt="">
         </div> 
     </div>
     <div class="content_info">
@@ -34,7 +34,7 @@
         the information you find necessary.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>assets/images/plantbg.png" alt="">
+            <img src="<?= URL ?>assets/images/second.gif" alt="">
         </div> 
     </div>
     <div class="content_info">
@@ -42,9 +42,6 @@
         From here we will help you ensure a peaceful life for your plant. You’ll be able to link the calendar of needs
         of your plant to your agenda. You will receive reminders with instructions !
         </p>
-        <div class="img_center">
-            <img src="<?= URL ?>assets/images/plantbg.png" alt="">
-        </div>
     </div>
     <div class="content_info">
         <p class="title">
