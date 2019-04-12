@@ -2,7 +2,7 @@
 require_once '../config/api_trefle.php';
 $title = 'The Green Thumb - My Plants';
 
-session_start();
+
 
 $messages = [
     'error' => [],

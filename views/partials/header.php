@@ -12,7 +12,7 @@
 <body>
     <?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
     <header>
-        <a class="log_and_name" href="<?= URL ?>myplants">
+        <a class="log_and_name" href="<?= URL ?>search">
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
             <p class="name_logo">The Green Thumb</p>
         </a>

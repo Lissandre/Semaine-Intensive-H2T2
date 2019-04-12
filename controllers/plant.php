@@ -4,7 +4,7 @@ require_once '../config/calendar/vendor/autoload.php';
 $title = 'The Green Thumb - Datas';
 
 //Start session to save infos later
-session_start();
+
 
 /**
 * API trefle.io (to get the plant's informations)
