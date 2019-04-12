@@ -9,6 +9,7 @@ $messages = [
     'success' => []
 ];
 
+//get all user's plants
 $temp = $pdo->query('SELECT * FROM plants WHERE id_user = \''.$_SESSION['login'].'\'');
 $temp = $temp->fetchAll();
 

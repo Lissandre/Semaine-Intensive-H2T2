@@ -96,14 +96,11 @@ if($temp)
     }
     //Add to fav
     if ($data) {
-        $prepare = $pdo->exec('UPDATE plants SET (plant_info_A = "cdzdc", plant_info_B = "ghj", plant_info_C = "scsdc") WHERE id_plant = "176870" AND id_user = "lissandre.pasdeloup@gmail.com"');
-        // $execute = $prepare->execute($data);
+        //Update dont work
+        $prepare = $pdo->prepare('UPDATE plants SET (plant_info_A = :plant_info_A, plant_info_B = :plant_info_B, plant_info_C = :plant_info_C) WHERE id_plant = '.$id.' AND id_user ='.$_SESSION['login']);
         // Injection
-        // $execute = $prepare->execute($data);
+        $execute = $prepare->execute($data);
         $favorites = [$export[0],$export[1],$export[2]];
-        echo '<pre>';
-        var_dump($prepare);
-        echo '</pre>';
     }
 }else{
     //get data to prepare pdo
@@ -138,6 +135,8 @@ if($temp)
 }
 
 //Remove from fav
+
+//Update dont work
 for ($i=0; $i <= 2; $i++) { 
     if(isset($_POST[$i])){
         ($i==1 ? $value = 'plant_info_A' :($i==2 ? $value = 'plant_info_B' : $value ='plant_info_C'));
@@ -145,33 +144,14 @@ for ($i=0; $i <= 2; $i++) {
             'UPDATE 
                 plants 
             SET 
-                (plant_info_A = oui )
+                ('.$value.' = "" )
             WHERE 
-                (id_plant = 169956 AND id_user = lissandre.pasdeloup@gmail.com)'
+                (id_plant ='.$id.' AND id_user = '.$_SESSION['login'].')'
         );
-        echo '<pre>';
-        var_dump($exec);
-        echo '</pre>';
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//L'enfer a un nom
 /**
  * GOOGLE CALENDAR
  */
@@ -206,7 +186,6 @@ for ($i=0; $i <= 2; $i++) {
 // $event->setAttendees($attedess);
 // $updatedEvent = $service->events->update('primary', $id, $event);
 // var_dump($updatedEvent->getAttendees());
-
 
 
 //Event creation
