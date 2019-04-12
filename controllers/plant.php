@@ -96,11 +96,10 @@ if($temp)
     }
     //Add to fav
     if ($data) {
-        $prepare = $pdo->prepare('UPDATE plants SET (plant_info_A = :plant_info_A, plant_info_B = :plant_info_B, plant_info_C = :plant_info_C) WHERE id_plant = '.$id.' AND id_user = "'.$_SESSION["login"].'"');
-        $exacute = $prepare->execute($data);
+        $prepare = $pdo->exec('UPDATE plants SET (plant_info_A = "cdzdc", plant_info_B = "ghj", plant_info_C = "scsdc") WHERE id_plant = "176870" AND id_user = "lissandre.pasdeloup@gmail.com"');
+        // $execute = $prepare->execute($data);
         // Injection
         // $execute = $prepare->execute($data);
-        echo $export[1];
         $favorites = [$export[0],$export[1],$export[2]];
         echo '<pre>';
         var_dump($prepare);
