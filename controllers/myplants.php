@@ -1,5 +1,5 @@
 <?php
-require_once '../config/api_trefle.php';
+require_once 'config/api_trefle.php';
 $title = 'The Green Thumb - My Plants';
 
 
@@ -15,6 +15,6 @@ $temp = $temp->fetchAll();
 
 
 if (isset($_SESSION['login']) && isset($_SESSION['password']))
-    include '../views/pages/myplants.php';
+    include 'views/pages/myplants.php';
 else
     $messages['error'][] = 'Oops! Something went wrong. Please try again later.';

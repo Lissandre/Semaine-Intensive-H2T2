@@ -1,5 +1,5 @@
-<?php include '../views/partials/header.php' ?>
+<?php include 'views/partials/header.php' ?>
 
 <h1>Add Plant</h1>
 
-<?php include '../views/partials/footer.php' ?>
+<?php include 'views/partials/footer.php' ?>

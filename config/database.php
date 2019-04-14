@@ -5,7 +5,7 @@
  define('DB_PASS', 'root');
 
  // to change
- define('DB_NAME', 'login');
+ define('DB_NAME', 'green_thumb');
  define('DB_USER', 'root');
 
 

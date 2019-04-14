@@ -2,4 +2,4 @@
 $title = 'The Green Thumb - Home';
 
 
-include '../views/pages/home.php';
+include 'views/pages/home.php';

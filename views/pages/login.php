@@ -1,10 +1,10 @@
-<?php include '../views/partials/header.php' ?>
+<?php include 'views/partials/header.php' ?>
 
 <div class="login_bg"></div>
 <div class="login_page">
     <div class="login_container">
         <div class="login_logo">
-            <img src="<?= URL ?>assets/images/logo.svg">
+            <img src="<?= URL ?>public/assets/images/logo.svg">
             <p class="login_logo_text">The Green Thumb</p>
         </div>
         <div class="login_space">
@@ -19,7 +19,7 @@
                     <?php foreach ($messages['mail-error'] as $message): ?>
                         <div class="message error">
                             <?= $message; ?>
-                            <img src="<?= URL ?>assets/images/error.svg">
+                            <img src="<?= URL ?>public/assets/images/error.svg">
                         </div>
                     <?php endforeach; ?>
 
@@ -33,7 +33,7 @@
                     <?php foreach ($messages['pwd-error'] as $message): ?>
                         <div class="message error">
                             <?= $message; ?>
-                            <img src="<?= URL ?>assets/images/error.svg">
+                            <img src="<?= URL ?>public/assets/images/error.svg">
                         </div>
                     <?php endforeach; ?>
 
@@ -51,4 +51,4 @@
 </div>
 
 
-<?php include '../views/partials/footer.php' ?>
+<?php include 'views/partials/footer.php' ?>

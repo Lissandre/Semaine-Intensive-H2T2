@@ -2,4 +2,4 @@
 $title = 'The Green Thumb - Add Plant';
 
 
-include '../views/pages/addplant.php';
+include 'views/pages/addplant.php';

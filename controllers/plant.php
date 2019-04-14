@@ -1,6 +1,6 @@
 <?php 
-require_once '../config/api_trefle.php';
-require_once '../config/calendar/vendor/autoload.php';
+require_once 'config/api_trefle.php';
+require_once 'config/calendar/vendor/autoload.php';
 $title = 'The Green Thumb - Datas';
 
 //Start session to save infos later
@@ -17,7 +17,7 @@ $url = 'https://trefle.io/api/plants/'.$id.'?token='.TOKEN_TREFLE;
 // Make request to API if the id exist
 // Cache info
 $cacheKey = md5($url);
-$cachePath = '../cache/'.$cacheKey;
+$cachePath = 'cache/'.$cacheKey;
 //If Request has been done before and younger than a week
 if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
 {
@@ -221,4 +221,4 @@ for ($i=0; $i <= 2; $i++) {
 // printf('Event created: %s', $event->htmlLink);
 
 
-include '../views/pages/plant.php';
+include 'views/pages/plant.php';

@@ -64,4 +64,4 @@ else
     $_POST['password'] = '';
 }
 
-include '../views/pages/signup.php';
+include 'views/pages/signup.php';

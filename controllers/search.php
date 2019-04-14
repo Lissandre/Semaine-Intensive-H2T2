@@ -1,5 +1,5 @@
 <?php 
-require('../config/api_trefle.php');
+require('config/api_trefle.php');
 $title = 'The Green Thumb - Search';
 
  /**
@@ -24,7 +24,7 @@ if(!empty($_GET['name']))
 
     // Cache info
     $cacheKey = md5($url);
-    $cachePath = '../cache/'.$cacheKey;
+    $cachePath = 'cache/'.$cacheKey;
     //If Request has been done before and younger than a week
     if(file_exists($cachePath) && time() - filemtime($cachePath) < 604800)
     {
@@ -82,4 +82,4 @@ if(!empty($_GET['name']))
     };
 };
 
-include '../views/pages/search.php';
+include 'views/pages/search.php';

@@ -2,4 +2,4 @@
 $title = 'Not found';
 
 
-include '../views/pages/404.php';
+include 'views/pages/404.php';

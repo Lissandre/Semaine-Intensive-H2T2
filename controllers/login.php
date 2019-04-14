@@ -60,4 +60,4 @@ if (!empty($_POST))
     }
 }
 
-include '../views/pages/login.php';
+include 'views/pages/login.php';

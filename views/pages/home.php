@@ -1,4 +1,4 @@
-<?php include '../views/partials/header.php' ?> 
+<?php include 'views/partials/header.php' ?> 
 <div class="content_home">
     <div class="container">
         <div class="background_main">
@@ -24,7 +24,7 @@
         us to recognize it.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>assets/images/first.gif" alt="">
+            <img src="<?= URL ?>public/assets/images/first.gif" alt="">
         </div> 
     </div>
     <div class="content_info">
@@ -34,7 +34,7 @@
         the information you find necessary.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>assets/images/second.gif" alt="">
+            <img src="<?= URL ?>public/assets/images/second.gif" alt="">
         </div> 
     </div>
     <div class="content_info">
@@ -53,4 +53,4 @@
     </div>
 </div>
 
-<?php include '../views/partials/footer.php' ?> 
+<?php include 'views/partials/footer.php' ?> 

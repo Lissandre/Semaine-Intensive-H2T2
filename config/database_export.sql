@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 12, 2019 at 07:24 AM
+-- Generation Time: Apr 14, 2019 at 04:57 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -11,8 +11,23 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `SIH2T2G09`
+-- Database: `green_thumb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plants`
+--
+
+CREATE TABLE `plants` (
+  `id` int(11) NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `idplant` int(11) NOT NULL,
+  `plantinfoa` varchar(256) NOT NULL,
+  `plantinfob` varchar(256) NOT NULL,
+  `plantinfoc` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -27,16 +42,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `login`, `password`) VALUES
-(19, 'mathis.gadie@outlook.com', '515f7138e65a4cc917b82b1aedec50d3'),
-(68, 'lissandre.pasdeloup@hetic.net', '6b168e768b6a1f27b6f036e560272d9d');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `plants`
+--
+ALTER TABLE `plants`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -47,6 +60,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `plants`
+--
+ALTER TABLE `plants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
