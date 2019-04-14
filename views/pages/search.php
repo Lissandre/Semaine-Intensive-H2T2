@@ -7,7 +7,7 @@
             <div style="background-image:url(<?= !empty($key['images'][0]) ? $key['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>);" alt="plant picture" class="plant_image_home"></div>
             <p class="plant_name"><?= $key['name'] ?></p>
             <a href="<?= 'plant/'.$key['id'] ?>" class="plant_link">
-                <img src="<?= URL ?>public/assets/images/plus.svg" alt="petit plus"> 
+                <img src="<?= URL ?>assets/images/plus.svg" alt="petit plus"> 
                 Add
             </a>
         </div>

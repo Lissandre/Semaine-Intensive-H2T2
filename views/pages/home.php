@@ -24,7 +24,7 @@
         us to recognize it.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>public/assets/images/first.gif" alt="">
+            <img src="<?= URL ?>assets/images/first.gif" alt="">
         </div> 
     </div>
     <div class="content_info">
@@ -34,7 +34,7 @@
         the information you find necessary.
         </p>
         <div class="img_center">
-            <img src="<?= URL ?>public/assets/images/second.gif" alt="">
+            <img src="<?= URL ?>assets/images/second.gif" alt="">
         </div> 
     </div>
     <div class="content_info">

@@ -10,7 +10,7 @@
         
         <div class="photo_and_title">
             <h2 class="title_plan_add"> <?= $result['name'] ? $result['name'] : 'Not found' ?> </h2>
-            <div class="img_plant_info" style="background-image:url(<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'public/assets/images/placeholder.png' ?>)"></div>
+            <div class="img_plant_info" style="background-image:url(<?= !empty($result['images'][0]) ? $result['images'][0]['url'] : URL.'assets/images/placeholder.png' ?>)"></div>
         </div>
 
         <div class="all_info">
@@ -24,7 +24,7 @@
                     <p class="favoriteInfo">
                         <?= $favorites[$i] ?>
                         <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">
-                            <img src="<?= URL ?>public/assets/images/x-circle.svg" alt="buttondelete">
+                            <img src="<?= URL ?>assets/images/x-circle.svg" alt="buttondelete">
                         </button>
                     </p>
                 <?php endif; ?>
@@ -131,7 +131,7 @@
 
     </div>
 
-    <script src="<?= URL ?>public/assets/checkbox.js"></script>
+    <script src="<?= URL ?>assets/checkbox.js"></script>
 <?php endif; ?>
 
 <?php include 'views/partials/footer.php' ?>
