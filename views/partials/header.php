@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= !empty($title) ? $title : '' ?></title>
-    <link rel="icon" href="<?= URL ?>assets/images/logo.png">
+    <link rel="icon" href="<?= URL ?>assets/images/greenthumb.png">
     <link rel="stylesheet" href="<?= URL ?>assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500" rel="stylesheet">
 </head>
 <body>
     <?php if($_GET['q']!='login' && $_GET['q']!='connect' && $_GET['q']!='signup'): ?>
     <header>
-        <a class="log_and_name" href="<?= URL ?>search">
+        <a class="log_and_name" href="<?= URL ?>home">
             <img class="logo_img" src="<?= URL ?>assets/images/logo.svg" alt="logo">
             <p class="name_logo">The Green Thumb</p>
         </a>
