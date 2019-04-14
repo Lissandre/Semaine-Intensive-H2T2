@@ -2,6 +2,10 @@
 require_once 'config/api_trefle.php';
 require_once 'config/calendar/vendor/autoload.php';
 $title = 'The Green Thumb - Datas';
+if(empty($login)){
+    header('Location: signup');
+    exit;
+}
 
 //Start session to save infos later
 

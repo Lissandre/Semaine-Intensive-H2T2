@@ -1,6 +1,10 @@
 <?php
 require_once 'config/api_trefle.php';
 $title = 'The Green Thumb - My Plants';
+if(empty($login)){
+    header('Location: signup');
+    exit;
+}
 
 
 
