@@ -1,6 +1,6 @@
 <?php
 $title = 'The Green Thumb - Add Plant';
-if(empty($login)){
+if(empty($_SESSION['login'])){
     header('Location: signup');
     exit;
 }

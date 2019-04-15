@@ -50,7 +50,7 @@ if(!empty($_POST))
         $_SESSION["login"] = $login;
         $_SESSION["password"] = $password;
 
-        header("Location: myplants");
+        header("Location: search");
 
         $_POST['name'] = '';
         $_POST['password'] = '';

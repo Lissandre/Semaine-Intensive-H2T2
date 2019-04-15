@@ -1,7 +1,7 @@
 <?php
 require_once 'config/api_trefle.php';
 $title = 'The Green Thumb - My Plants';
-if(empty($login)){
+if(empty($_SESSION['login'])){
     header('Location: signup');
     exit;
 }
@@ -14,7 +14,7 @@ $messages = [
 ];
 
 //get all user's plants
-$temp = $pdo->query('SELECT * FROM plants WHERE id_user = \''.$_SESSION['login'].'\'');
+$temp = $pdo->query('SELECT * FROM plants WHERE mailuser = \''.$_SESSION['login'].'\'');
 $temp = $temp->fetchAll();
 
 

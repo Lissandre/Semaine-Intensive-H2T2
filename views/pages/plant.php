@@ -14,27 +14,27 @@
         </div>
 
         <div class="all_info">
-
-            <div class="favorites">
-                <p class="favoris_infos_title">Favoris infos</p>
-                
-                <form action="#" method="post">
-                <?php for ($i=0; $i < sizeof($favorites); $i++): ?>
-                <?php if($favorites[$i]!=''): ?>
-                    <p class="favoriteInfo">
-                        <?= $favorites[$i] ?>
-                        <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">
-                            <img src="<?= URL ?>assets/images/x-circle.svg" alt="buttondelete">
-                        </button>
-                    </p>
-                <?php endif; ?>
-                <?php endfor; ?>
-                </form>
-            </div>
-
+            <?php if($favorites != ['','','']): ?>
+                <div class="favorites">
+                    <p class="favoris_infos_title">Favorites informations</p>
+                    
+                    <form action="#" method="post">
+                    <?php for ($i=0; $i < sizeof($favorites); $i++): ?>
+                    <?php if($favorites[$i]!=''): ?>
+                        <p class="favoriteInfo">
+                            <?= $favorites[$i] ?>
+                            <button type="submit" name="<?= $i ?>" value="<?= $favorites[$i] ?>">
+                                <img src="<?= URL ?>assets/images/x-circle.svg" alt="buttondelete">
+                            </button>
+                        </p>
+                    <?php endif; ?>
+                    <?php endfor; ?>
+                    </form>
+                </div>
+            <?php endif; ?>
             <div class="informations">
 
-                <p class="all_infos_title">All infos</p>
+                <p class="all_infos_title">All informations</p>
                 <form action="#" method="post">
 
                     <div class="label_input_inline">

@@ -1,14 +1,12 @@
 <?php 
 require_once 'config/api_trefle.php';
 require_once 'config/calendar/vendor/autoload.php';
-$title = 'The Green Thumb - Datas';
-if(empty($login)){
+$title = 'The Green Thumb - Plant';
+
+if(empty($_SESSION['login'])){
     header('Location: signup');
     exit;
 }
-
-//Start session to save infos later
-
 
 /**
 * API trefle.io (to get the plant's informations)
@@ -16,6 +14,7 @@ if(empty($login)){
 */
 //Get q param
 $id = basename($_GET['q']);
+
 // Create URL
 $url = 'https://trefle.io/api/plants/'.$id.'?token='.TOKEN_TREFLE;
 // Make request to API if the id exist
@@ -67,16 +66,11 @@ $export = new SplFixedArray(3);
 $data = [];
 
 //Get saved fav
-$temp = $pdo->query('SELECT * FROM plants WHERE id_plant = '.$id.' AND id_user = \''.$_SESSION['login'].'\'');
+$temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
 $temp = $temp->fetch();
 //If datas found
 if($temp)
 {
-    $favorites = [
-        $temp->plant_info_A,
-        $temp->plant_info_B,
-        $temp->plant_info_C,
-    ];
     //get data to prepare pdo
     if(isset($_POST['add'])){
         if(!empty($_POST['PHP_favBox'])) {
@@ -86,25 +80,30 @@ if($temp)
             for ($i=0; $i < count($_POST['PHP_favBox']); $i++) { 
                 $export[$i] = $_POST['PHP_favBox'][$i];
             }
-            for ($i=count($_POST['PHP_favBox']); $i < 2; $i++) { 
-                $export[$i] = '\'null\'';
+            for ($i=count($_POST['PHP_favBox']); $i < 3; $i++) { 
+                $export[$i] = '';
             }
             //Save fav of this plant to database
             //What we want to insert
             $data = [
-                'plant_info_A' => $export[0],
-                'plant_info_B' => $export[1],
-                'plant_info_C' => $export[2],
+                'idplant' => basename($_GET['q']),
+                'mailuser' => $_SESSION['login'],
+                'plantinfoa' => $export[0],
+                'plantinfob' => $export[1],
+                'plantinfoc' => $export[2],
             ];
+            //Add to fav
+            if ($data) {
+                //Update dont work
+                $prepare = $pdo->prepare('UPDATE plants SET plantinfoa = :plantinfoa, plantinfob = :plantinfob, plantinfoc = :plantinfoc WHERE (idplant = :idplant AND mailuser = :mailuser)');
+                // Injection
+                $execute = $prepare->execute($data);
+                
+                //Get all fav
+                $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+                $temp = $temp->fetch();
+            }
         }
-    }
-    //Add to fav
-    if ($data) {
-        //Update dont work
-        $prepare = $pdo->prepare('UPDATE plants SET (plant_info_A = :plant_info_A, plant_info_B = :plant_info_B, plant_info_C = :plant_info_C) WHERE id_plant = '.$id.' AND id_user ='.$_SESSION['login']);
-        // Injection
-        $execute = $prepare->execute($data);
-        $favorites = [$export[0],$export[1],$export[2]];
     }
 }else{
     //get data to prepare pdo
@@ -122,19 +121,22 @@ if($temp)
             //Save fav of this plant to database
             //What we want to insert
             $data = [
-                'id_user' => $_SESSION['login'],
-                'id_plant' => basename($_GET['q']),
-                'plant_info_A' => $export[0],
-                'plant_info_B' => $export[1],
-                'plant_info_C' => $export[2]
+                'mailuser' => $_SESSION['login'],
+                'idplant' => basename($_GET['q']),
+                'plantinfoa' => $export[0],
+                'plantinfob' => $export[1],
+                'plantinfoc' => $export[2]
             ];
         }
     }
     if ($data) {
-        $prepare = $pdo->prepare('INSERT INTO plants (id_user, id_plant, plant_info_A, plant_info_B, plant_info_C) VALUES (:id_user, :id_plant, :plant_info_A, :plant_info_B, :plant_info_C)');
+        $prepare = $pdo->prepare('INSERT INTO plants (mailuser, idplant, plantinfoa, plantinfob, plantinfoc) VALUES (:mailuser, :idplant, :plantinfoa, :plantinfob, :plantinfoc)');
         // Injection
         $execute = $prepare->execute($data);
-        $favorites = [$export[0],$export[1],$export[2]];
+
+        //Get all fav
+        $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+        $temp = $temp->fetch();
     }
 }
 
@@ -143,17 +145,28 @@ if($temp)
 //Update dont work
 for ($i=0; $i <= 2; $i++) { 
     if(isset($_POST[$i])){
-        ($i==1 ? $value = 'plant_info_A' :($i==2 ? $value = 'plant_info_B' : $value ='plant_info_C'));
-        $exec = $pdo->exec(
-            'UPDATE 
-                plants 
-            SET 
-                ('.$value.' = "" )
-            WHERE 
-                (id_plant ='.$id.' AND id_user = '.$_SESSION['login'].')'
-        );
+        ($i==0 ? $value = 'plantinfoa' :($i==1 ? $value = 'plantinfob' : $value ='plantinfoc'));
+        $data = [
+            'mailuser' => $_SESSION['login'],
+            'idplant' => basename($_GET['q']),
+            'newvalue' => '',
+        ];
+        
+
+        $prepare = $pdo->prepare('UPDATE plants SET '.$value.' = :newvalue WHERE (idplant = :idplant AND mailuser = :mailuser)');
+        $execute = $prepare->execute($data);
+
+        //Get all fav
+        $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+        $temp = $temp->fetch();
     }
 }
+
+$favorites = [
+    $temp->plantinfoa,
+    $temp->plantinfob,
+    $temp->plantinfoc,
+];
 
 //L'enfer a un nom
 /**
