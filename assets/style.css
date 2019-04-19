@@ -12,6 +12,7 @@ Header
 
 header
 {
+    z-index: 100;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
@@ -164,18 +165,23 @@ h2.not_found
 
 .dispResearch
 {
+    z-index: -1;
     padding: 100px 140px 0 140px;
     display:flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    text-decoration: none;
 }
 
 .plantsText
 {
+    position: relative;
     margin: 0px 20px;
     width: 200px ;
     height: 370px;
     font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    color: #000000;
 }
 
 .plant_name
@@ -185,6 +191,11 @@ h2.not_found
     font-weight: 500;
     font-size: 16px;
     text-transform: capitalize;
+    text-decoration: none;
+}
+
+.plant_info_myplants{
+    margin: 5px 0 0 0;
 }
 
 .plant_image_home
@@ -193,15 +204,25 @@ h2.not_found
     height: 200px;
     background-size: cover;
     background-position: center;
+    text-decoration: none;
 }
 
 .plant_link
 {
+    position: absolute;
+    top: 270px;
     color: #30BE76;
     border : 2px solid #30BE76;
     border-radius: 4px;
     padding: 5px 8px 7px 10px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.plant_link img{
+    margin-right: 3px;
+    padding-bottom: 1px;
 }
 
 .add_plant
@@ -496,9 +517,10 @@ Login & Signup Errors
 }
 .img_plant_info 
 {
-    height: 30%;
-    background-size: cover;
+    height: 40%;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .informations
@@ -595,4 +617,82 @@ input[type="submit"].label_input_inline
 
 .gif {
     text-align: center;
+}
+
+/*
+Myplants
+*/
+
+.plantsTextbis
+{
+    position: relative;
+    margin: 0px 20px 50px 0px;
+    width: 320px ;
+    height: 500px;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    color: #000000;
+}
+
+.plant_image_homebis
+{
+    width: 320px;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+}
+
+.plant_name_bis
+{
+    margin: 15px 0 20px 0;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.info_link{
+    display: block;
+    position: absolute;
+    width: 65%;
+    text-align: center;
+    color: #30BE76;
+    border : 2px solid #30BE76;
+    border-radius: 4px;
+    padding: 5px 8px 7px 10px;
+    text-decoration: none;
+    bottom: 0;
+    font-size: 16px;
+}
+
+.delete_button{
+    display: block;
+    position: absolute;
+    width: 25%;
+    height: 35px;
+    text-align: center;
+    color: #FF0000;
+    border : 2px solid #FF0000;
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 5px 8px 7px 10px;
+    text-decoration: none;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.delete_button:hover{
+    background: #FF0000;
+    color: #FFFFFF;
+}
+
+.dispResearchbis{
+    padding: 50px 140px 0 140px;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-decoration: none;
 }

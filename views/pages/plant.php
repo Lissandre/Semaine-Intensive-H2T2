@@ -14,7 +14,7 @@
         </div>
 
         <div class="all_info">
-            <?php if($favorites != ['','','']): ?>
+            <?php if($favorites != ['','',''] && !empty($favorites)): ?>
                 <div class="favorites">
                     <p class="favoris_infos_title">Favorites informations</p>
                     
@@ -36,13 +36,6 @@
 
                 <p class="all_infos_title">All informations</p>
                 <form action="#" method="post">
-
-                    <div class="label_input_inline">
-                        <input value="name" type="checkbox" name ="PHP_favBox[]" class="JS_limitChoice">
-                        <label class="name">
-                            Name : <?= $result['name'] ? $result['name'] : 'Not found' ?>
-                        </label>
-                    </div>
                     
                     <div class="label_input_inline">
                         <input value="scientific_name" type="checkbox" name ="PHP_favBox[]" class="JS_limitChoice">
@@ -120,17 +113,11 @@
                             Duration : <?= $result['duration'] ? $result['duration'] : 'Not found' ?>
                         </label>
                     </div>
-
                     <input class="label_input_inline" type="submit" name ="add" value="Add">
-
                 </form>
             </div>
-
         </div>
-        
-
     </div>
-
     <script src="<?= URL ?>assets/checkbox.js"></script>
 <?php endif; ?>
 

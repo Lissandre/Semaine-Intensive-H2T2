@@ -17,7 +17,7 @@
             <p class="name_logo">The Green Thumb</p>
         </a>
 
-        <?php if($_GET['q']!='home' && $_GET['q']!=''): ?>
+        <?php if(!empty($_SESSION['login'])): ?>
             <?php if((empty($plantsList) && !empty($_GET['name']))||!empty($_GET['name'])||$_GET['q']!='search'): ?>
                 <form class="header_search" action="<?= URL ?>search" method="get">
                     <input class="search_bar_header" type="text" name="name" id="name" autocomplete="off" placeholder="Search your plant" >
@@ -34,7 +34,7 @@
                 <img class="log_out_img" src="<?= URL ?>assets/images/log-out.svg" alt="log out icon">
             </a>
         </div>
-        <?php elseif($_GET['q']=='home' || $_GET['q']==''): ?>
+        <?php elseif(empty($_SESSION['login'])): ?>
         <div class="buttons_icons">
             <div class="button">
                 <a class="my_plant" href="<?= URL ?>login">Login</a>

@@ -14,7 +14,8 @@ if(empty($_SESSION['login'])){
 */
 //Get q param
 $id = basename($_GET['q']);
-
+$pageurl = $_SERVER["REQUEST_URI"];
+$plantuser = (int)parse_url($pageurl, PHP_URL_QUERY);
 // Create URL
 $url = 'https://trefle.io/api/plants/'.$id.'?token='.TOKEN_TREFLE;
 // Make request to API if the id exist
@@ -66,9 +67,11 @@ $export = new SplFixedArray(3);
 $data = [];
 
 //Get saved fav
-$temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+$temp = $pdo->query('SELECT * FROM plants WHERE id='.$plantuser);
 $temp = $temp->fetch();
-//If datas found
+//If plant's user
+if ($plantuser) {
+    //If datas found
 if($temp)
 {
     //get data to prepare pdo
@@ -78,7 +81,11 @@ if($temp)
             $checked_count = count($_POST['PHP_favBox']);
             // Loop to store values of individual checked checkbox.
             for ($i=0; $i < count($_POST['PHP_favBox']); $i++) { 
-                $export[$i] = $_POST['PHP_favBox'][$i];
+                if (empty($result[$_POST['PHP_favBox'][$i]])) {
+                    $export[$i] = '';
+                }else{
+                    $export[$i] = $result[$_POST['PHP_favBox'][$i]];
+                }
             }
             for ($i=count($_POST['PHP_favBox']); $i < 3; $i++) { 
                 $export[$i] = '';
@@ -86,26 +93,27 @@ if($temp)
             //Save fav of this plant to database
             //What we want to insert
             $data = [
-                'idplant' => basename($_GET['q']),
-                'mailuser' => $_SESSION['login'],
                 'plantinfoa' => $export[0],
                 'plantinfob' => $export[1],
                 'plantinfoc' => $export[2],
+                'id' => $plantuser,
             ];
             //Add to fav
             if ($data) {
                 //Update dont work
-                $prepare = $pdo->prepare('UPDATE plants SET plantinfoa = :plantinfoa, plantinfob = :plantinfob, plantinfoc = :plantinfoc WHERE (idplant = :idplant AND mailuser = :mailuser)');
+                $prepare = $pdo->prepare('UPDATE plants SET plantinfoa = :plantinfoa, plantinfob = :plantinfob, plantinfoc = :plantinfoc WHERE id = :id');
                 // Injection
                 $execute = $prepare->execute($data);
                 
                 //Get all fav
-                $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+                $temp = $pdo->query('SELECT * FROM plants WHERE id = '.$plantuser);
                 $temp = $temp->fetch();
             }
         }
     }
-}else{
+}
+}
+else{
     //get data to prepare pdo
     if(isset($_POST['add'])){
         if(!empty($_POST['PHP_favBox'])) {
@@ -113,7 +121,11 @@ if($temp)
             $checked_count = count($_POST['PHP_favBox']);
             // Loop to store values of individual checked checkbox
             for ($i=0; $i < count($_POST['PHP_favBox']); $i++) { 
-                $export[$i] = $_POST['PHP_favBox'][$i];
+                if (empty($result[$_POST['PHP_favBox'][$i]])) {
+                    $export[$i] = '';
+                }else{
+                    $export[$i] = $result[$_POST['PHP_favBox'][$i]];
+                }
             }
             for ($i=count($_POST['PHP_favBox']); $i <= 2; $i++) { 
                 $export[$i] = '';
@@ -123,6 +135,7 @@ if($temp)
             $data = [
                 'mailuser' => $_SESSION['login'],
                 'idplant' => basename($_GET['q']),
+                'nameplant' => $result['name'],
                 'plantinfoa' => $export[0],
                 'plantinfob' => $export[1],
                 'plantinfoc' => $export[2]
@@ -130,12 +143,12 @@ if($temp)
         }
     }
     if ($data) {
-        $prepare = $pdo->prepare('INSERT INTO plants (mailuser, idplant, plantinfoa, plantinfob, plantinfoc) VALUES (:mailuser, :idplant, :plantinfoa, :plantinfob, :plantinfoc)');
+        $prepare = $pdo->prepare('INSERT INTO plants (mailuser, idplant, nameplant, plantinfoa, plantinfob, plantinfoc) VALUES (:mailuser, :idplant, :nameplant, :plantinfoa, :plantinfob, :plantinfoc)');
         // Injection
         $execute = $prepare->execute($data);
 
         //Get all fav
-        $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.$id.' AND mailuser = \''.$_SESSION['login'].'\'');
+        $temp = $pdo->query('SELECT * FROM plants WHERE idplant = '.basename($_GET['q']).' AND id = (SELECT max(id) FROM plants)');
         $temp = $temp->fetch();
     }
 }
@@ -161,12 +174,14 @@ for ($i=0; $i <= 2; $i++) {
         $temp = $temp->fetch();
     }
 }
+if ($temp) {
+    $favorites = [
+        $temp->plantinfoa,
+        $temp->plantinfob,
+        $temp->plantinfoc,
+    ];
+}
 
-$favorites = [
-    $temp->plantinfoa,
-    $temp->plantinfob,
-    $temp->plantinfoc,
-];
 
 //L'enfer a un nom
 /**
